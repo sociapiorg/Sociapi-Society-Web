@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { links } from "../data/site";
 import { Button, Container } from "./ui";
+import { Seo } from "./Seo";
 
 const primary = [["Home", "/"], ["About", "/about"], ["Chapters", "/chapters"], ["Events", "/events"], ["Programs", "/programs"], ["Opportunities", "/opportunities"]];
 const more = [["Our Team", "/team"], ["Gallery", "/gallery"], ["Reviews", "/reviews"], ["FAQs", "/faqs"], ["Services", "/services"], ["Shop", "/shop"], ["Contact Us", "/contact"], ["Verify Certificate", "/verify"]];
@@ -19,7 +20,7 @@ export function Layout({ children }: { children: ReactNode }) {
     return () => removeEventListener("mousedown", close);
   }, []);
 
-  return <>
+  return <><Seo />
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="header"><Container className="header-inner">
       <Link to="/" className="brand"><img src="/logo.png" alt="" /><span>SOCIAPI <small>SOCIETY</small></span></Link>

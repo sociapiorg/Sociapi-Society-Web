@@ -199,5 +199,5 @@ export function HomeTeasers() {
 }
 
 export function ChapterCTA() {
-  return <section className="chapter-final"><img src="/Image/Agentum Pic/IMG_5921.png" alt="Sociapi community together" /><div /><p>YOUR CAMPUS COULD BE NEXT.</p><h2>THE NEXT CHAPTER<br />STARTS WITH STUDENTS.</h2><nav><Button to={links.chapter} external>Start a Chapter ↗</Button><Button to={links.join} external secondary>Join a Chapter ↗</Button></nav></section>;
+  return <section className="chapter-final"><img src="/Image/Agentum Pic/IMG_5921.png" alt="Sociapi community together" /><div /><p>YOUR CAMPUS COULD BE NEXT.</p><h2>THE NEXT CHAPTER<br />STARTS WITH STUDENTS.</h2><nav><Button to={links.chapter}>Start a Chapter ↗</Button><Button to={links.join} external secondary>Join a Chapter ↗</Button></nav></section>;
 }
