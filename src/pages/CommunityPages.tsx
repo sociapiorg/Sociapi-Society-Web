@@ -1,8 +1,10 @@
-import { useEffect, useMemo, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from 'react';
 import { Link } from "react-router-dom";
 import { PageHero, Container, Button } from "../components/ui";
 import { faqs, facebookReviews, galleryGroups, pastMembers, reviews, services, teamMembers } from "../data/secondary";
 import { links } from "../data/site";
+
+import { designProjects, labProjects } from '../data/projects';
 
 export function TeamPage() {
   const leaders = teamMembers.filter(person => person.tier === "Leadership");
@@ -125,12 +127,82 @@ export function FAQPage() {
   </>;
 }
 
+
 export function ServicesPage() {
-  return <><PageHero eyebrow="Sociapi Labs / Services" title="Work made by the creative side of Sociapi." text="A secondary initiative offering selected digital and creative services. Sociapi Society remains, first and foremost, a student technology community." image="/Image/Agentum Pic/IMG_5998.png" />
-    <section className="services-page"><Container>
-      <div className="labs-note"><span>SOCIAPI SOCIETY</span><i>COMMUNITY</i><b>+</b><span>SOCIAPI LABS</span><i>CREATIVE SERVICES</i></div>
-      {services.map((service, index) => <article key={service.name}><span>0{index + 1}</span><h2>{service.name}</h2><p>{service.text}</p><a href={`https://wa.me/923329984490?text=${encodeURIComponent(`Hello Sociapi, I am interested in ${service.name}.`)}`} target="_blank" rel="noreferrer">Discuss a project ↗</a></article>)}
-    </Container></section>
+  return <>
+    <PageHero
+      eyebrow='Sociapi Labs / Services'
+      title='Useful digital work, built with care.'
+      text='Selected software, web, and creative work from the secondary studio side of Sociapi. The Society remains a student technology community first.'
+      image='/Image/Agentum Pic/IMG_5998.png'
+    />
+    <section className='services-page'>
+      <Container>
+        <div className='labs-note'>
+          <span>SOCIAPI SOCIETY</span><i>COMMUNITY</i><b>+</b>
+          <span>SOCIAPI LABS</span><i>PROJECTS &amp; CREATIVE SERVICES</i>
+        </div>
+
+        <div className='services-intro'>
+          <p className='section-label'>WHAT WE DO</p>
+          <h2>Services for teams that need clear, practical work.</h2>
+        </div>
+        <div className='service-lines'>
+          {services.map((service, index) => <article key={service.name}>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <h3>{service.name}</h3>
+            <p>{service.text}</p>
+            <a href={`https://wa.me/923329984490?text=${encodeURIComponent(`Hello Sociapi, I am interested in ${service.name}.`)}`} target='_blank' rel='noreferrer'>Discuss a project <span aria-hidden='true'>{String.fromCharCode(8599)}</span></a>
+          </article>)}
+        </div>
+
+        <div className='labs-projects'>
+          <header className='labs-section-head'>
+            <p className='section-label'>SELECTED PROJECTS / 03</p>
+            <h2>Built beyond the browser.</h2>
+            <p>Real tools and digital products designed around the way people actually work.</p>
+          </header>
+          <div className='project-cases'>
+            {labProjects.map(project => <div className='project-case' key={project.name}>
+              <div className='project-index'><span>{project.number}</span><p>{project.category}</p></div>
+              <div className='project-copy'>
+                <h3>{project.name}</h3>
+                <strong>{project.summary}</strong>
+                <p>{project.details}</p>
+                <ul>{project.features.map(feature => <li key={feature}>{feature}</li>)}</ul>
+              </div>
+              <div className='project-meta'>
+                <p>BUILT WITH</p>
+                <div>{project.stack.map(item => <span key={item}>{item}</span>)}</div>
+                {project.link
+                  ? <a href={project.link} target='_blank' rel='noreferrer'>{project.linkLabel} <span aria-hidden='true'>{String.fromCharCode(8599)}</span></a>
+                  : <a href={`https://wa.me/923329984490?text=${encodeURIComponent(`Hello Sociapi, I would like to discuss a project similar to ${project.name}.`)}`} target='_blank' rel='noreferrer'>Discuss similar work <span aria-hidden='true'>{String.fromCharCode(8599)}</span></a>}
+              </div>
+            </div>)}
+          </div>
+        </div>
+
+        <div className='design-showcase'>
+          <header className='labs-section-head'>
+            <p className='section-label'>GRAPHIC DESIGN</p>
+            <h2>Campaigns people saw before they entered the room.</h2>
+            <p>Selected event graphics created for real Sociapi programs and audiences.</p>
+          </header>
+          <div className='poster-pair'>
+            {designProjects.map((project, index) => <figure key={project.title}>
+              <div><img src={project.image} alt={project.alt} loading='lazy' /></div>
+              <figcaption><span>0{index + 1}</span><div><strong>{project.title}</strong><p>{project.type}</p></div></figcaption>
+            </figure>)}
+          </div>
+        </div>
+
+        <div className='labs-contact'>
+          <p>SOCIAPI LABS / PROJECT ENQUIRIES</p>
+          <h2>Have something useful to build?</h2>
+          <a href='https://wa.me/923329984490?text=Hello%20Sociapi%2C%20I%20would%20like%20to%20discuss%20a%20project.' target='_blank' rel='noreferrer'>Start a conversation <span aria-hidden='true'>{String.fromCharCode(8599)}</span></a>
+        </div>
+      </Container>
+    </section>
   </>;
 }
 
