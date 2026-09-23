@@ -165,6 +165,7 @@ export function ServicesPage() {
           <div className='project-cases'>
             {labProjects.map(project => <div className='project-case' key={project.name}>
               <div className='project-index'><span>{project.number}</span><p>{project.category}</p></div>
+              <figure className='project-visual'><img src={project.image} alt={project.imageAlt} loading='lazy' /></figure>
               <div className='project-copy'>
                 <h3>{project.name}</h3>
                 <strong>{project.summary}</strong>
