@@ -11,13 +11,14 @@ export function TeamPage() {
   const advisor = teamMembers.find(person => person.tier === "Advisor")!;
   const departmentLeads = teamMembers.filter(person => person.tier === "Department Lead");
   const coreMembers = teamMembers.filter(person => person.tier === "Core Member");
+  const activeTeamCount = departmentLeads.length + coreMembers.length;
   return <>
     <PageHero eyebrow="Sociapi Society / National Team" title="The people behind the network." text="A student-led national team working across leadership, operations, events, outreach, media, and design." />
     <section className="team-editorial">
       <Container>
         <div className="team-context">
           <p>SOCIAPI SOCIETY / NATIONAL TEAM</p>
-          <strong>11</strong>
+          <strong>{activeTeamCount}</strong>
           <span>core team members across people, events, media, outreach, design, and operations.</span>
         </div>
         <header className="team-section-head"><span>01 / LEADERSHIP</span><h2>One leadership team.</h2><p>Founder, Co-Founder, and General Secretary working through one shared structure.</p></header>
