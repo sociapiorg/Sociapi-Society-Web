@@ -3,6 +3,9 @@
     { "source": "/partner", "destination": "/partner-with-us", "permanent": true },
     { "source": "/career", "destination": "/opportunities", "permanent": true }
   ],
+  "rewrites": [
+    { "source": "/verify/:certificateId", "destination": "/verify" }
+  ],
   "cleanUrls": true,
   "headers": [
     {
