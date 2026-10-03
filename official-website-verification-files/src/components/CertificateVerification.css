@@ -1,0 +1,19 @@
+.verify-page {
+  --green: #517642;
+  --lime: #7bd355;
+  --soft: #e8ecee;
+  --muted: #939596;
+  --line: #e8ecee;
+  background: #e8ecee;
+  color: #333333;
+  font-family: "Tomorrow", sans-serif;
+}
+
+.verify-page .verify-hero h1 {
+  color: #333333;
+  font-family: "Neue Machina", "Tomorrow", sans-serif;
+}
+
+.verify-page .verify-note {
+  background: #333333;
+}
