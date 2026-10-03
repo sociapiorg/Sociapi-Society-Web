@@ -73,7 +73,7 @@ export default function CertificateVerification() {
                   id="certificate-id"
                   value={value}
                   onChange={(event) => setValue(event.target.value)}
-                  placeholder="e.g. SA-011 or SACC-2601-0001"
+                  placeholder="e.g. SA-011 or SACC-2601"
                   autoComplete="off"
                   spellCheck={false}
                 />
