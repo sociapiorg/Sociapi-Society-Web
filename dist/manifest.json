@@ -1,0 +1,21 @@
+{
+  "name": "Sociapi Society",
+  "short_name": "Sociapi",
+  "description": "Pakistan's most ambitious student-led AI society",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070907",
+  "theme_color": "#7bd355",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
