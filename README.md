@@ -430,10 +430,6 @@ This project is the property of **Sociapi Society**. All rights reserved.
 
 ---
 
-**Last Updated:** August 2026
+**Last Updated:** OCT 2026
 **Maintained by:** zuhairzeb
-<<<<<<< HEAD
->>>>>>> 20ac15e772e3e16765941b26d4e50ba6093c8366
-=======
 
->>>>>>> 2e7de84a45d573818d0b9c18cf50c762263e525f
