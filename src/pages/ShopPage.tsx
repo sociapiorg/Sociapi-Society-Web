@@ -3,11 +3,25 @@ import { Container } from "../components/ui";
 import { products, type Product } from "../data/secondary";
 import { orderService, type CreateOrderInput } from "../services/orders";
 
-type CartItem = { id: string; name: string; size: string; qty: number; price: number; image: string; gender: string };
+type CartItem = { id: string; name: string; size: string; qty: number; price: number; image: string; gender: string; category: string };
+
+const DARAZ_SHIRT_URL = "https://www.daraz.pk/products/oversized-baggy-t-shirt-for-men-and-women-unisex-casual-streetwear-tee-i1981174376-s14069074976.html?";
+
+function isShirt(product: Product) {
+  return product.category === "Official Society Wear";
+}
 
 function ProductView({ product, onAdd }: { product: Product; onAdd: (item: CartItem) => void }) {
   const [size, setSize] = useState(product.sizes[0]);
   const [qty, setQty] = useState(1);
+  const shirt = isShirt(product);
+  function handleAdd() {
+    if (shirt) {
+      window.open(DARAZ_SHIRT_URL, "_blank", "noopener,noreferrer");
+    } else {
+      onAdd({ id: product.id, name: product.name, size, qty, price: product.price, image: product.image, gender: product.gender, category: product.category });
+    }
+  }
   return <article className="shop-product">
     <div className="product-image"><img src={product.image} alt={product.name} /><span>{product.badge}</span></div>
     <div className="product-copy">
@@ -15,7 +29,7 @@ function ProductView({ product, onAdd }: { product: Product; onAdd: (item: CartI
       <ul>{product.features.map(feature => <li key={feature}>{feature}</li>)}</ul>
       <fieldset><legend>Choose size</legend>{product.sizes.map(option => <button type="button" className={size === option ? "selected" : ""} key={option} onClick={() => setSize(option)}>{option}</button>)}</fieldset>
       <div className="quantity"><button type="button" onClick={() => setQty(Math.max(1, qty - 1))} aria-label="Decrease quantity">−</button><span>{qty}</span><button type="button" onClick={() => setQty(qty + 1)} aria-label="Increase quantity">+</button></div>
-      <button className="add-cart" onClick={() => onAdd({ id: product.id, name: product.name, size, qty, price: product.price, image: product.image, gender: product.gender })}>Add to cart</button>
+      <button className="add-cart" onClick={handleAdd}>{shirt ? "Buy on Daraz" : "Add to cart"}</button>
     </div>
   </article>;
 }
@@ -26,7 +40,9 @@ export default function ShopPage() {
   const subtotal = useMemo(() => cart.reduce((total, item) => total + item.price * item.qty, 0), [cart]);
   const delivery = subtotal ? 200 : 0;
   const total = subtotal + delivery;
+  const hasNonShirtItems = useMemo(() => cart.some(item => item.category !== "Official Society Wear"), [cart]);
   function add(item: CartItem) {
+    if (item.category === "Official Society Wear") return;
     setCart(current => {
       const index = current.findIndex(existing => existing.id === item.id && existing.size === item.size);
       if (index < 0) return [...current, item];
@@ -45,10 +61,10 @@ export default function ShopPage() {
       <aside><h2>Your cart <span>{cart.reduce((count, item) => count + item.qty, 0)}</span></h2>
         {cart.length === 0 ? <p className="cart-empty">Your cart is empty.</p> : cart.map(item => <article key={`${item.id}-${item.size}`}><img src={item.image} alt="" /><div><h3>{item.name}</h3><p>{item.size} · Qty {item.qty}</p><b>Rs. {(item.price * item.qty).toLocaleString("en-US")}</b></div><button onClick={() => setCart(current => current.filter(existing => !(existing.id === item.id && existing.size === item.size)))} aria-label={`Remove ${item.name}`}>×</button></article>)}
         <dl><div><dt>Subtotal</dt><dd>Rs. {subtotal.toLocaleString("en-US")}</dd></div><div><dt>Delivery</dt><dd>Rs. {delivery.toLocaleString("en-US")}</dd></div><div><dt>Total</dt><dd>Rs. {total.toLocaleString("en-US")}</dd></div></dl>
-        <button className="button" disabled={!cart.length} onClick={() => setCheckout(true)}>Checkout</button><small>Delivery: PKR 200 · Cash on delivery</small>
+        <button className="button" disabled={!cart.length || !hasNonShirtItems} onClick={() => setCheckout(true)}>Checkout</button><small>Delivery: PKR 200 · Cash on delivery</small>
       </aside>
     </div></Container></section>
-    {checkout && <Checkout cart={cart} subtotal={subtotal} delivery={delivery} total={total} close={() => setCheckout(false)} done={() => { setCart([]); setCheckout(false); }} />}
+    {checkout && hasNonShirtItems && <Checkout cart={cart} subtotal={subtotal} delivery={delivery} total={total} close={() => setCheckout(false)} done={() => { setCart([]); setCheckout(false); }} />}
   </>;
 }
 
