@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FormEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { Link } from "react-router-dom";
 import { PageHero, Container, Button } from "../components/ui";
 import { faqs, facebookReviews, galleryGroups, pastMembers, reviews, services } from "../data/secondary";
@@ -59,12 +59,20 @@ export function TeamPage() {
 export function GalleryPage() {
   const all = useMemo(() => galleryGroups.flatMap(group => group.images.map(src => ({ src, group: group.name }))), []);
   const [active, setActive] = useState<number | null>(null);
+  const lightboxRef = useRef<HTMLDivElement>(null);
+  const openerRef = useRef<HTMLElement | null>(null);
   useEffect(() => {
-    if (active === null) return;
+    if (active === null) { openerRef.current?.focus(); return; }
+    lightboxRef.current?.querySelector<HTMLElement>(".lightbox-close")?.focus();
     const key = (event: KeyboardEvent) => {
       if (event.key === "Escape") setActive(null);
       if (event.key === "ArrowRight") setActive((active + 1) % all.length);
       if (event.key === "ArrowLeft") setActive((active - 1 + all.length) % all.length);
+      if (event.key === "Tab") {
+        const items = [...(lightboxRef.current?.querySelectorAll<HTMLElement>('button:not([disabled]),a[href],[tabindex]:not([tabindex="-1"])') ?? [])];
+        if (event.shiftKey && document.activeElement === items[0]) { event.preventDefault(); items.at(-1)?.focus(); }
+        else if (!event.shiftKey && document.activeElement === items.at(-1)) { event.preventDefault(); items[0]?.focus(); }
+      }
     };
     addEventListener("keydown", key);
     return () => removeEventListener("keydown", key);
@@ -77,14 +85,14 @@ export function GalleryPage() {
         <div className="editorial-gallery">
           {group.images.map((src, index) => {
             const global = all.findIndex(item => item.src === src);
-            return <button key={src} className={`gallery-tile tile-${index % 7}`} onClick={() => setActive(global)}>
+            return <button key={src} className={`gallery-tile tile-${index % 7}`} onClick={event => { openerRef.current = event.currentTarget; setActive(global); }}>
               <img src={src} alt={`${group.name} moment ${index + 1}`} loading="lazy" /><span>Open image ↗</span>
             </button>;
           })}
         </div>
       </div>)}
     </Container></section>
-    {active !== null && <div className="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" onClick={() => setActive(null)}>
+    {active !== null && <div ref={lightboxRef} className="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" onClick={() => setActive(null)}>
       <button className="lightbox-close" onClick={() => setActive(null)} aria-label="Close gallery">×</button>
       <button className="lightbox-prev" onClick={event => { event.stopPropagation(); setActive((active - 1 + all.length) % all.length); }} aria-label="Previous image">←</button>
       <figure onClick={event => event.stopPropagation()}><img src={all[active].src} alt={`${all[active].group} enlarged`} /><figcaption>{all[active].group} · {active + 1}/{all.length}</figcaption></figure>

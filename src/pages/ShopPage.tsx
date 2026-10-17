@@ -1,4 +1,4 @@
-import { useMemo, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { Container } from "../components/ui";
 import { products, type Product } from "../data/secondary";
 import { orderService, type CreateOrderInput } from "../services/orders";
@@ -72,6 +72,23 @@ function Checkout({ cart, subtotal, delivery, total, close, done }: { cart: Cart
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const openerRef = useRef<HTMLElement | null>(typeof document !== "undefined" && document.activeElement instanceof HTMLElement ? document.activeElement : null);
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    const focusable = () => [...(dialog?.querySelectorAll<HTMLElement>('button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),a[href],[tabindex]:not([tabindex="-1"])') ?? [])];
+    dialog?.querySelector<HTMLElement>(".modal-close")?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { event.preventDefault(); close(); return; }
+      if (event.key !== "Tab") return;
+      const items = focusable();
+      if (!items.length) return;
+      if (event.shiftKey && document.activeElement === items[0]) { event.preventDefault(); items.at(-1)?.focus(); }
+      else if (!event.shiftKey && document.activeElement === items.at(-1)) { event.preventDefault(); items[0].focus(); }
+    };
+    addEventListener("keydown", onKeyDown);
+    return () => { removeEventListener("keydown", onKeyDown); openerRef.current?.focus(); };
+  }, [close]);
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); setBusy(true); setError("");
     const data = new FormData(event.currentTarget);
@@ -80,7 +97,7 @@ function Checkout({ cart, subtotal, delivery, total, close, done }: { cart: Cart
     catch (caught) { setError(caught instanceof Error ? caught.message : "The order could not be saved."); }
     finally { setBusy(false); }
   }
-  return <div className="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title"><div><button className="modal-close" onClick={close} aria-label="Close checkout">×</button><h2 id="checkout-title">Delivery details</h2>
+  return <div ref={dialogRef} className="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title"><div><button className="modal-close" onClick={close} aria-label="Close checkout">×</button><h2 id="checkout-title">Delivery details</h2>
     {success ? <div className="order-success"><h3>Thank you.</h3><p>{success}</p><button className="button" onClick={done}>Close</button></div> : <form onSubmit={submit}>
       <label>Full name<input required name="name" autoComplete="name" /></label><label>Phone<input required name="phone" autoComplete="tel" /></label><label>Email<input name="email" type="email" /></label><label>Province<input name="province" /></label><label>City<input required name="city" /></label><label>Postal code<input name="postal" /></label>
       <label className="full">Complete address<textarea required name="address" /></label><label className="full">Landmark<input name="landmark" /></label>{error && <p className="order-error">{error}</p>}<div className="checkout-total">Total <b>Rs. {total.toLocaleString("en-US")}</b></div><button className="button" disabled={busy}>{busy ? "Saving order…" : "Place order"}</button><small>Orders are saved to the existing Sociapi Supabase order system.</small>

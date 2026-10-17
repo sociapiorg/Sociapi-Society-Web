@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { chapters, events, links, partners, stats } from "../data/site";
+import { chapters, events, links, partners } from "../data/site";
 import { ChapterCTA, HomeTeasers } from "./CommunityPages";
 
 const activities = [
@@ -11,6 +11,11 @@ const activities = [
   ["05", "Opportunities", "Find ways to volunteer, collaborate, lead, speak, and build.", "/opportunities"],
 ] as const;
 const cityOrder = ["Peshawar", "Mardan", "Nowshera", "Faisalabad", "Lahore", "Multan"];
+const impactStats = [
+  { value: String(chapters.length).padStart(2, "0"), label: "Chapters across Pakistan" },
+  { value: String(new Set(chapters.map(chapter => chapter.city)).size).padStart(2, "0"), label: "Cities represented" },
+  { value: String(events.length).padStart(2, "0"), label: "Programs and events" },
+];
 
 function ImpactCounter({ value }: { value: string }) {
   const ref = useRef<HTMLElement>(null);
@@ -47,16 +52,16 @@ export default function HomeCampaign() {
 
   return <div className="campaign">
     <section className="campaign-hero">
-      <div className="hero-photo hero-photo-main"><img src="/Image/ss team.jpg" alt="Sociapi students together at Islamia College University Peshawar" /></div>
+      <div className="hero-photo hero-photo-main"><img src="/Image/ss team.jpg" alt="Sociapi students together at Islamia College University Peshawar" width="1440" height="990" fetchPriority="high" decoding="async" /></div>
       <div className="campaign-hero-shade" />
       <p className="campaign-kicker">Sociapi Society <span>• From Ideas to Intelligence.</span></p>
       <h1><span>Build skills.</span><span>Run events.</span><span className="lime-word"><strong>Lead</strong> your campus.</span></h1>
       <div className="campaign-hero-bottom">
         <p>Sociapi helps students create active tech communities inside their universities across Pakistan.</p>
-        <div><Link className="hero-primary-cta" to="/chapters">Explore Chapters <b>↗</b></Link><a className="hero-secondary-cta" href={links.join} target="_blank" rel="noreferrer">Join Sociapi</a></div>
+        <div><a className="hero-primary-cta" href={links.join} target="_blank" rel="noreferrer">Join Sociapi Society <b>↗</b></a><Link className="hero-secondary-cta" to="/events">Explore Our Events</Link></div>
       </div>
     </section>
-    <div className="movement-line" aria-label="Sociapi impact">{stats.map(stat => <span key={stat.label}><ImpactCounter value={stat.value} /> {stat.label}</span>)}</div>
+    <div className="movement-line" aria-label="Sociapi impact">{impactStats.map(stat => <span key={stat.label}><ImpactCounter value={stat.value} /> {stat.label}</span>)}</div>
 
     <section className="national-stage">
       <div className="national-intro"><p>THE NETWORK / PAKISTAN</p><h2><b>09</b> CHAPTERS<br />ACROSS PAKISTAN</h2><div><p>Student-led communities creating local opportunities while staying connected through one national network.</p><Link to="/chapters">Explore the national network ↗</Link></div></div>
@@ -69,10 +74,10 @@ export default function HomeCampaign() {
     <section className="practice-spread"><header><p>WHAT SOCIAPI DOES</p><h2>FIVE WAYS<br />TO TAKE PART.</h2><span>Choose the route that fits where you are now. Every route leads to people, practice, and a way to contribute.</span></header><div className="practice-board">{activities.map((activity, index) => <Link key={activity[0]} className={`practice-piece piece-${index + 1}`} to={activity[3]}><span>{activity[0]}</span><h3>{activity[1]}</h3><p>{activity[2]}</p><b>↗</b></Link>)}</div></section>
 
     <section className="flagship-intro"><p>FLAGSHIP EVENTS / 2026</p><h2>Two rooms.<br />One growing community.</h2><div><p>AGENTUM and MEHFIL AI are proof of the same idea: students deserve serious spaces for practical technology, careers, and conversation.</p><Link to="/events">Explore all events ↗</Link></div></section>
-    <section className="event-case"><img src={agentum.image} alt="AGENTUM 2026 stage and audience" /><div className="event-case-veil" /><div className="event-case-index">PROOF / 01</div><div className="event-case-copy"><p>{agentum.date} · {agentum.attendance} students</p><h2>AGENTUM<br /><em>2026</em></h2><div><p>{agentum.summary}</p><Link to={`/events/${agentum.slug}`}>Enter the event story ↗</Link></div></div><div className="event-case-topics">{agentum.topics.map(topic => <span key={topic}>{topic}</span>)}</div></section>
-    <section className="mehfil-story"><div className="mehfil-title"><span>PROOF / 02</span><h2>MEHFIL<br />AI 2026</h2><p>A student-led gathering bringing practical AI, careers, and community into one room.</p><Link to={`/events/${mehfil.slug}`}>See what happened ↗</Link></div><div className="mehfil-image main"><img src="/Image/Mehfil_AI.png" alt="MEHFIL AI 2026 event artwork" /></div><div className="mehfil-image crowd"><img src="/Image/2.png" alt="MEHFIL AI community moment" /></div><div className="mehfil-fact"><b>150+</b><span>students in the room</span><small>07 / 05 / 2026<br />PESHAWAR, PK</small></div></section>
+    <section className="event-case"><img src={agentum.image} alt="AGENTUM 2026 stage and audience" width="1350" height="1800" loading="lazy" decoding="async" /><div className="event-case-veil" /><div className="event-case-index">PROOF / 01</div><div className="event-case-copy"><p>{agentum.date} · {agentum.attendance} students</p><h2>AGENTUM<br /><em>2026</em></h2><div><p>{agentum.summary}</p><Link to={`/events/${agentum.slug}`}>Enter the event story ↗</Link></div></div><div className="event-case-topics">{agentum.topics.map(topic => <span key={topic}>{topic}</span>)}</div></section>
+    <section className="mehfil-story"><div className="mehfil-title"><span>PROOF / 02</span><h2>MEHFIL<br />AI 2026</h2><p>A student-led gathering bringing practical AI, careers, and community into one room.</p><Link to={`/events/${mehfil.slug}`}>See what happened ↗</Link></div><div className="mehfil-image main"><img src="/Image/Mehfil_AI.png" alt="MEHFIL AI 2026 event artwork" width="1080" height="1350" loading="lazy" decoding="async" /></div><div className="mehfil-image crowd"><img src="/Image/2.webp" alt="Students attending a MEHFIL AI session" width="1080" height="1350" loading="lazy" decoding="async" /></div><div className="mehfil-fact"><b>150+</b><span>students in the room</span><small>07 / 05 / 2026<br />PESHAWAR, PK</small></div></section>
 
-    <section className="origin-story"><div className="origin-words"><p>HOW IT STARTED</p><h2>ONE<br />CAMPUS.</h2></div><div className="origin-photos"><img className="origin-a" src="/Image/Agentum Pic/6.jpg" alt="Students taking part in a Sociapi gathering" /><img className="origin-b" src="/Image/Agentum Pic/15.jfif" alt="Sociapi members together" /><span>Islamia College University · Peshawar, Pakistan</span></div><div className="origin-copy"><h3>One campus started it. Nine chapters carried it forward.</h3><p>Sociapi began at Islamia College University Peshawar. Events built momentum, campus leaders took the community into new universities.</p><p className="origin-now">01 CAMPUS → 03 MAJOR EVENTS → 09 CHAPTERS</p><Link to="/about">Read the full story ↗</Link></div></section>
+    <section className="origin-story"><div className="origin-words"><p>HOW IT STARTED</p><h2>ONE<br />CAMPUS.</h2></div><div className="origin-photos"><img className="origin-a" src="/Image/Agentum Pic/6.webp" alt="Students taking part in a Sociapi gathering" width="1200" height="1600" loading="lazy" decoding="async" /><img className="origin-b" src="/Image/Agentum Pic/15.jfif" alt="Sociapi members together" width="940" height="788" loading="lazy" decoding="async" /><span>Islamia College University · Peshawar, Pakistan</span></div><div className="origin-copy"><h3>One campus started it. Nine chapters carried it forward.</h3><p>Sociapi began at Islamia College University Peshawar. Events built momentum, campus leaders took the community into new universities.</p><p className="origin-now">01 CAMPUS → 03 MAJOR EVENTS → 09 CHAPTERS</p><Link to="/about">Read the full story ↗</Link></div></section>
     <HomeTeasers />
 
     <section className="campaign-partners"><p>BUILT WITH PEOPLE WHO SHOW UP</p><div>{partners.map(partner => <figure key={partner.name}><img src={partner.image} alt={`${partner.name} logo`} /><figcaption>{partner.name}</figcaption></figure>)}</div></section>

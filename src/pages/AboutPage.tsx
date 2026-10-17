@@ -1,94 +1,122 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Container } from "../components/ui";
 import { links } from "../data/site";
 import { teamMembers } from "../data/secondary";
 import { founderMessage } from "../data/founderMessage";
+import "./AboutPage.css";
 
-const fields = [
+const principles = [
+  { number: "01", title: "Join a workshop", text: "Practice technical and professional skills alongside other students." },
+  { number: "02", title: "Work on a project", text: "Build useful ideas with students and campus teams." },
+  { number: "03", title: "Volunteer at an event", text: "Help with event operations, media, or student outreach." },
+  { number: "04", title: "Lead on your campus", text: "Organize local activity and connect with other Sociapi chapters." },
+];
+
+const focusAreas = [
   "Artificial Intelligence", "Generative AI", "Machine Learning", "Deep Learning",
-  "Robotics", "Programming", "Data Science", "Data Analysis", "Web Development",
-  "OpenCV", "Emerging technologies",
+  "Robotics", "Computer Vision", "Software Engineering", "Programming",
+  "Data Science", "Data Analysis", "Web Development", "Emerging Technologies",
 ];
 
-const work = [
-  "Workshops, seminars, training sessions, and technical events",
-  "Real projects and stronger student portfolios",
-  "Learning and study groups for practical skill development",
-  "Teamwork, problem solving, and innovation",
-  "Connections with mentors, industry professionals, and opportunities",
-  "Support for exploring modern technology and career paths",
-];
-
-const shortBios: Record<string, string> = {
-  "Muhammad Zuhair Zeb": "Founded Sociapi at Islamia College University Peshawar to help students learn technology through practical work, projects, and community leadership.",
-  "Muhammad Mudassir": "Helps shape Sociapi's technology direction, with interests in computer vision, AI agents, and web development.",
-  "Dr. Naveed Abbas": "Provides academic guidance and mentorship for responsible, practical student technology work.",
-};
+const eventPhotos = [
+  { src: "/Image/Agentum Pic/0001.webp", title: "AGENTUM", note: "150+ attendees", alt: "A speaker presenting at the AGENTUM seminar", href: "/events/agentum-2026", width: 1200, height: 1600 },
+  { src: "/Image/2.webp", title: "Mehfil AI", note: "150+ attendees", alt: "Students attending a Mehfil AI session", href: "/events/mehfil-ai-2026", width: 1080, height: 1350 },
+] as const;
 
 export default function AboutPage() {
-  const featuredPeople = teamMembers.filter(person => ["Founder", "Co-Founder", "Advisor"].includes(person.role));
+  const founder = teamMembers.find(person => person.role === "Founder");
+  const leaders = teamMembers.filter(person => ["Co-Founder", "President", "Vice President", "Advisor"].includes(person.role));
+  const heroImageRef = useRef<HTMLImageElement>(null);
+  const [founderMessageOpen, setFounderMessageOpen] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sections = [...document.querySelectorAll<HTMLElement>(".about-editorial section[data-reveal]")];
+    if (!media.matches && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("about-revealed");
+          observer.unobserve(entry.target);
+        }
+      }), { threshold: 0.08 });
+      sections.forEach(section => { section.classList.add("about-reveal"); observer.observe(section); });
+      return () => observer.disconnect();
+    }
+  }, []);
+
+  useEffect(() => {
+    const image = heroImageRef.current;
+    if (!image || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let frame = 0;
+    const update = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => image.style.setProperty("--hero-scroll", `${Math.min(window.scrollY * 0.045, 22)}px`));
+    };
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+    return () => { window.removeEventListener("scroll", update); cancelAnimationFrame(frame); image.style.removeProperty("--hero-scroll"); };
+  }, []);
 
   return <div className="about-editorial">
-    <section className="about-hero-new">
-      <Container>
-        <p>ABOUT SOCIAPI</p>
-        <h1>Ideas become skills.<br />Skills become <em>solutions.</em></h1>
-        <div>
-          <p>Sociapi Society is a student-led AI and technology community connecting students across universities in Pakistan.</p>
-          <p>We help students turn ideas into practical skills, real projects, and career opportunities.</p>
-        </div>
-      </Container>
+    <section className="about-hero-new" aria-labelledby="about-title">
+      <div className="about-hero-panel"><Container>
+        <p className="about-kicker">STUDENT-LED · PAKISTAN</p>
+        <h1 id="about-title"><span className="about-hero-line">WE DON'T JUST</span><span className="about-hero-line">LEARN THE FUTURE.</span><span className="about-hero-line">WE <em>BUILD</em> IT.</span></h1>
+        <p className="about-hero-description">Sociapi Society is a student-led technology community at Islamia College University Peshawar, bringing students together to learn, collaborate, and turn ideas into practical projects.</p>
+        <div className="about-hero-actions"><Button to="/team">Explore Our Community</Button><a href="#about-story">Our Story <span aria-hidden="true">↘</span></a></div>
+        <span className="about-hero-index" aria-hidden="true">01 / ABOUT SOCIAPI</span>
+      </Container></div>
+      <div className="about-hero-image"><img ref={heroImageRef} src="/Image/Agentum Pic/6.webp" alt="A Sociapi presenter speaking at the AGENTUM seminar" width="1200" height="1600" fetchPriority="high" decoding="async" /></div>
     </section>
 
-    <section className="about-people">
-      <Container>
-        <header><p>PEOPLE BEHIND SOCIAPI</p><h2>Student-led, built together.</h2><span>Leadership and academic guidance for a growing student community.</span></header>
-        <div className="about-people-grid">{featuredPeople.map(person => <article key={person.name}>
-          <img src={person.image} alt={`${person.name}, ${person.role}`} loading="lazy" />
-          <div><p>{person.role === "Advisor" ? "ACADEMIC ADVISOR" : person.role.toUpperCase()}</p><h3>{person.name}</h3><span>{shortBios[person.name] ?? person.bio}</span></div>
-        </article>)}</div>
-        <Link className="about-people-link" to="/team">Meet the full team <span aria-hidden="true">&#8599;</span></Link>
+    <section className="about-proof" aria-label="Sociapi community reach" data-reveal><Container>
+      <p className="about-proof-label">COMMUNITY IN ACTION</p>
+      <article><strong>150+</strong><span>AGENTUM attendees</span></article>
+      <article><strong>150+</strong><span>Mehfil AI attendees</span></article>
+      <article><strong>520+</strong><span>Participants across Sociapi programs and events</span></article>
+    </Container></section>
 
-        <div className="founder-message">
-          <article>
-            <header><p>A NOTE FROM THE FOUNDER</p><h3>Muhammad Zuhair Zeb</h3></header>
-            <blockquote>{founderMessage.quote}</blockquote>
-            <details className="founder-message-details">
-              <summary>Read the founder's full message <span aria-hidden="true">+</span></summary>
-              <div className="founder-message-copy">{founderMessage.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>
-              <p className="founder-message-signoff">From Ideas to Intelligence.</p>
-            </details>
-          </article>
-        </div>
-      </Container>
-    </section>
+    <section className="about-why" aria-labelledby="about-why-title" data-reveal><Container>
+      <div className="about-why-heading"><p className="about-kicker">02 — WHY WE EXIST</p><h2 id="about-why-title">A practical place to <em>learn technology.</em></h2></div>
+      <div className="about-why-copy"><p>Members practice in workshops, collaborate on projects, and share what they learn through Sociapi events and campus chapters.</p><figure><img src="/Image/ss team.jpg" alt="Sociapi Society members gathered outdoors on campus" width="1440" height="990" loading="lazy" decoding="async" /><figcaption>Students learning and working together on campus.</figcaption></figure></div>
+    </Container></section>
 
-    <section className="about-focus">
-      <Container><p>WHAT WE LEARN AND BUILD</p><div>{fields.map(field => <span key={field}>{field}</span>)}</div></Container>
-    </section>
+    <section className="about-way" aria-labelledby="about-way-title" data-reveal><Container>
+      <header className="about-way-heading"><p className="about-kicker">03 — HOW MEMBERS TAKE PART</p><h2 id="about-way-title">Learn through <em>real activity.</em></h2><p>Start with a workshop, join a project, volunteer at an event, or lead activity on your campus.</p></header>
+      <ol className="about-way-grid">{principles.map(item => <li key={item.number}><span>{item.number}</span><div><h3>{item.title}</h3><p>{item.text}</p></div><b aria-hidden="true">↗</b></li>)}</ol>
+    </Container></section>
 
-    <section className="about-do">
-      <Container>
-        <header><p>WHAT WE DO</p><h2>A community designed for learning by doing.</h2></header>
-        <ol>{work.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span>{item}</li>)}</ol>
-      </Container>
-    </section>
+    <section id="about-story" className="about-story" aria-labelledby="about-story-title" data-reveal><Container>
+      <div className="about-story-label"><p className="about-kicker">04 — OUR STORY</p><span>ISLAMIA COLLEGE UNIVERSITY PESHAWAR</span></div>
+      <div className="about-story-copy"><h2 id="about-story-title">Started at Islamia College University Peshawar.</h2><p className="about-story-date">DECEMBER 2025 <i aria-hidden="true" /> PESHAWAR, PAKISTAN</p><p>Sociapi began at Islamia College University Peshawar in December 2025. Students now take part through workshops, events, projects, volunteering, and campus chapters.</p><Link to="/team">Meet the people behind Sociapi <span aria-hidden="true">↗</span></Link></div>
+    </Container></section>
 
-    <section className="about-purpose">
-      <Container>
-        <article><p>VISION</p><h2>To build a connected and skilled student technology community where ideas become skills, and skills become real-world solutions.</h2></article>
-        <article><p>MISSION</p><ul>
-          <li>Make technology education simple, practical, and accessible</li>
-          <li>Give students opportunities to learn by doing</li>
-          <li>Build a strong network of student tech communities</li>
-          <li>Encourage innovation, collaboration, and project-based learning</li>
-          <li>Connect students with industry, mentors, and career opportunities</li>
-        </ul></article>
-      </Container>
-    </section>
+    {founder && <section className="about-founder" aria-labelledby="about-founder-title" data-reveal><Container>
+      <div className="about-founder-photo"><img src={founder.image} alt={`Portrait of ${founder.name}, founder of Sociapi Society`} width="600" height="750" loading="lazy" decoding="async" /><span>THE PERSON BEHIND THE IDEA</span><i aria-hidden="true" /></div>
+      <div className="about-founder-copy"><p className="about-kicker">A NOTE FROM THE FOUNDER</p><h2 id="about-founder-title">Muhammad<br /><em>Zuhair Zeb</em></h2><p className="about-founder-bio">{founder.bio}</p><div className="about-founder-quote"><span aria-hidden="true">“</span><blockquote>{founderMessage.quote}</blockquote></div><p className="about-founder-signoff">FOUNDER, SOCIAPI SOCIETY</p>
+        <button className="founder-message-trigger" type="button" aria-expanded={founderMessageOpen} aria-controls="founder-full-message" onClick={() => setFounderMessageOpen(open => !open)}>{founderMessageOpen ? "Close the full message" : "Read the full message"}<span aria-hidden="true">{founderMessageOpen ? "−" : "+"}</span></button>
+      </div>
+      {founderMessageOpen && <div id="founder-full-message" className="founder-full-message" role="region" aria-label="Founder's full message"><button className="founder-message-close" type="button" onClick={() => setFounderMessageOpen(false)} aria-label="Close the founder's full message">×</button><p className="about-kicker">A NOTE FROM THE FOUNDER</p>{founderMessage.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}<p className="founder-message-signoff">Muhammad Zuhair Zeb <span>· Founder, Sociapi Society</span></p></div>}
+    </Container></section>}
 
-    <section className="about-signoff">
-      <Container><p>SOCIAPI</p><h2>From Ideas to Intelligence.</h2><Button to={links.join} external>Join Sociapi</Button></Container>
-    </section>
+    <section className="about-people" aria-labelledby="about-people-title" data-reveal><Container>
+      <header className="about-people-heading"><p className="about-kicker">05 — LEADERSHIP</p><h2 id="about-people-title">The minds moving us forward.</h2><Link to="/team">Meet the full team <span aria-hidden="true">↗</span></Link></header>
+      <div className="about-people-grid">{leaders.map(person => <article key={person.name}><div className="about-person-photo"><img src={person.image} alt={`Portrait of ${person.name}`} width="600" height="750" loading="lazy" decoding="async" /></div><div className="about-person-copy"><p>{person.role === "Advisor" ? "ACADEMIC ADVISOR" : person.role.toUpperCase()}</p><h3>{person.name}</h3><span>{person.bio}</span></div></article>)}</div>
+      <div className="about-after-founder"><Button to={links.join} external>Join Sociapi</Button></div>
+    </Container></section>
+
+    <section className="about-focus" aria-labelledby="about-focus-title" data-reveal><Container>
+      <div className="about-focus-heading"><p className="about-kicker">06 — WHAT MEMBERS EXPLORE</p><h2 id="about-focus-title">Technology to <em>learn and use.</em></h2><p>These are the fields members explore through workshops, projects, and community events.</p></div>
+      <div className="about-focus-list" aria-label="Technology areas"><p>WHAT WE EXPLORE</p><ul>{focusAreas.map((field, index) => <li key={field}><span>{String(index + 1).padStart(2, "0")}</span>{field}</li>)}</ul></div>
+    </Container></section>
+
+    <section className="about-events" aria-labelledby="about-events-title" data-reveal><Container>
+      <header className="about-events-heading"><div><p className="about-kicker">IN THE ROOM TOGETHER</p><h2 id="about-events-title">Seminars and events students join.</h2></div><Link to="/events">Explore all events <span aria-hidden="true">↗</span></Link></header>
+      <div className="about-event-grid">{eventPhotos.map((photo, index) => <figure className={`about-event-card about-event-card-${index + 1}`} key={photo.title}><Link className="about-event-link" to={photo.href}><div className="about-event-image"><img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" /></div><figcaption><span><strong>{photo.title}</strong><small>{photo.note}</small></span><b aria-hidden="true">↗</b></figcaption></Link></figure>)}</div>
+    </Container></section>
+
+    <section className="about-signoff" aria-labelledby="about-signoff-title" data-reveal><Container><p className="about-kicker">TAKE PART</p><h2 id="about-signoff-title">Learn with your<br /><em>campus community.</em></h2><p>Join a chapter, take part in a workshop, or volunteer at an event.</p><Button to={links.join} external>Join Sociapi Society</Button></Container></section>
+    <a className="about-sticky-join" href={links.join} target="_blank" rel="noreferrer">Join Sociapi</a>
   </div>;
 }

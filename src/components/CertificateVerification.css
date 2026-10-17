@@ -2,7 +2,7 @@
   --green: #517642;
   --lime: #7bd355;
   --soft: #e8ecee;
-  --muted: #939596;
+  --muted: #5f6561;
   --line: #e8ecee;
   background: #e8ecee;
   color: #333333;
@@ -22,4 +22,17 @@
   .verify-body > .container {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  .verify-card {
+    min-width: 0;
+  }
+
+  .verify-card form > div {
+    flex-wrap: wrap;
+  }
+}
+
+.verify-card label {
+  color: #333333;
+  font-size: 14px;
 }

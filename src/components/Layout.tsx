@@ -4,8 +4,8 @@ import { links } from "../data/site";
 import { Button, Container } from "./ui";
 import { Seo } from "./Seo";
 
-const primary = [["Home", "/"], ["About", "/about"], ["Chapters", "/chapters"], ["Events", "/events"], ["Our Team", "/team"], ["Opportunities", "/opportunities"], ["Services", "/services"], ["Contact Us", "/contact"]];
-const more = [["Gallery", "/gallery"], ["Reviews", "/reviews"], ["FAQs", "/faqs"], ["Shop", "/shop"], ["Verify Certificate", "/verify"]];
+const primary = [["Home", "/"], ["About", "/about"], ["Chapters", "/chapters"], ["Events", "/events"], ["Opportunities", "/opportunities"], ["Contact Us", "/contact"]];
+const more = [["Our Team", "/team"], ["Services", "/services"], ["Partner With Us", "/partner-with-us"], ["Gallery", "/gallery"], ["Reviews", "/reviews"], ["FAQs", "/faqs"], ["Shop", "/shop"], ["Verify Certificate", "/verify"]];
 
 export function Layout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -30,14 +30,14 @@ export function Layout({ children }: { children: ReactNode }) {
           <button onClick={() => setMoreOpen(!moreOpen)} aria-expanded={moreOpen} aria-haspopup="true">More <span>{moreOpen ? "−" : "+"}</span></button>
           {moreOpen && <div role="menu">{more.map(([label, path]) => <NavLink role="menuitem" key={path} to={path}>{label}<span>↗</span></NavLink>)}</div>}
         </div>
-        <NavLink className="partner-nav" to="/partner-with-us">Partner With Us</NavLink>
+
       </nav>
       <span className="header-cta"><Button to={links.join} external>Join Sociapi</Button></span>
       <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-nav" aria-label="Toggle navigation"><span /><span /></button>
     </Container>{open && <nav id="mobile-nav" className="mobile-nav" aria-label="Mobile navigation"><Container>
-      {primary.slice(1).map(([label, path]) => <NavLink key={path} to={path}>{label}<span>↗</span></NavLink>)}
+      {primary.map(([label, path]) => <NavLink key={path} to={path}>{label}<span>↗</span></NavLink>)}
       <p>MORE</p>{more.map(([label, path]) => <NavLink key={path} to={path}>{label}<span>↗</span></NavLink>)}
-      <NavLink to="/partner-with-us">Partner With Us<span>↗</span></NavLink><Button to={links.join} external>Join Sociapi</Button>
+      <Button to={links.join} external>Join Sociapi</Button>
     </Container></nav>}</header>
     <main id="main">{children}</main><Footer />
   </>;
