@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/programs", "destination": "/opportunities", "permanent": true },
     { "source": "/partner", "destination": "/partner-with-us", "permanent": true },
     { "source": "/career", "destination": "/opportunities", "permanent": true }
   ],
