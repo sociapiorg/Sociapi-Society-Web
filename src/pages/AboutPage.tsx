@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from "react";
 import { Link } from "react-router-dom";
 import { Button, Container } from "../components/ui";
 import { links } from "../data/site";
@@ -23,6 +23,26 @@ const eventPhotos = [
   { src: "/Image/Agentum Pic/0001.webp", title: "AGENTUM", note: "150+ attendees", alt: "A speaker presenting at the AGENTUM seminar", href: "/events/agentum-2026", width: 1200, height: 1600 },
   { src: "/Image/2.webp", title: "Mehfil AI", note: "150+ attendees", alt: "Students attending a Mehfil AI session", href: "/events/mehfil-ai-2026", width: 1080, height: 1350 },
 ] as const;
+
+function trackExplorePointer(event: PointerEvent<HTMLLIElement>) {
+  if (event.pointerType !== "mouse" || window.innerWidth <= 760 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const card = event.currentTarget;
+  const bounds = card.getBoundingClientRect();
+  const x = Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width));
+  const y = Math.max(0, Math.min(1, (event.clientY - bounds.top) / bounds.height));
+  card.style.setProperty("--pointer-x", `${x * 100}%`);
+  card.style.setProperty("--pointer-y", `${y * 100}%`);
+  card.style.setProperty("--rotate-x", `${(0.5 - y) * 4}deg`);
+  card.style.setProperty("--rotate-y", `${(x - 0.5) * 4}deg`);
+}
+
+function resetExplorePointer(event: PointerEvent<HTMLLIElement>) {
+  const card = event.currentTarget;
+  card.style.removeProperty("--pointer-x");
+  card.style.removeProperty("--pointer-y");
+  card.style.removeProperty("--rotate-x");
+  card.style.removeProperty("--rotate-y");
+}
 
 export default function AboutPage() {
   const founder = teamMembers.find(person => person.role === "Founder");
@@ -108,7 +128,7 @@ export default function AboutPage() {
 
     <section className="about-focus" aria-labelledby="about-focus-title" data-reveal><Container>
       <div className="about-focus-heading"><p className="about-kicker">06 — WHAT MEMBERS EXPLORE</p><h2 id="about-focus-title">Technology to <em>learn and use.</em></h2><p>These are the fields members explore through workshops, projects, and community events.</p></div>
-      <div className="about-focus-list" aria-label="Technology areas"><p>WHAT WE EXPLORE</p><ul>{focusAreas.map((field, index) => <li key={field}><span>{String(index + 1).padStart(2, "0")}</span>{field}</li>)}</ul></div>
+      <div className="about-focus-list"><h3 className="about-focus-list-title">WHAT WE EXPLORE</h3><ol aria-label="Technology areas">{focusAreas.map((field, index) => <li key={field} style={{ "--item-index": index } as CSSProperties} onPointerMove={trackExplorePointer} onPointerLeave={resetExplorePointer}><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><span className="about-focus-topic">{field}</span></li>)}</ol></div>
     </Container></section>
 
     <section className="about-events" aria-labelledby="about-events-title" data-reveal><Container>
