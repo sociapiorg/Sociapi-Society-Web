@@ -13,7 +13,36 @@ export const teamMembers:TeamMember[]=[
 {name:"Danyal Yousafzai",role:"Organizer",department:"Operations",tier:"Core Member",image:"/Image/Team Pic/DANI Yousufzai.jpg",bio:"Supports on-ground event coordination and volunteer management.",skills:["Organization","Events","Leadership"]},
 {name:"Maimoona Iqbal",role:"Decor Member",department:"Event Experience",tier:"Core Member",image:"/Image/Team Pic/Female/maimoona.jpg",bio:"Supports stage, venue, and detail design for student events.",skills:["Decor","Teamwork","Execution"]},
 {name:"Muhammad Faisal",role:"Video Editor",department:"Media",tier:"Core Member",image:"/Image/Team Pic/Faisal Khan.png",bio:"Crafts event edits, reels, and society storytelling assets.",skills:["Video Editing","Storytelling","Production"]}];
-export const pastMembers=["Muhammad Amjad — Graphic Designer","Siraat Ali — Technical Lead","Farhan Ullah — Logistics","SIRAJ UDDIN — Technical Lead","Maavia Rizwan — Finance Lead","Mustafa Ali Qureshi — HR","Mazhar Shah — Graphic Designer","Muhammad Afaq — Finance","Sabir shah — Event Manager","Atifaslamkhan — Logistics","Kashif Ahmad — Video Editor","Muhammad jawad — Finance","Shah Hussain — Video Editor","Rauf Akhtar — Outreach lead","Latif ur rahman — Media","Shahzeb khan — Media","Afaq saeed — Technical","Fawad khan — Media","Safir ullah — Web developer","Tamkeen israr — Women lead","M Anas rashid — Decor","Muhammad Awais khan — Organizer","Sajeela Tariq — decor","Mohammad Arqam Javed — social media","Muhammad Mobeen — Logistics","Maira Seher — outreach","Maemona Rehman — outreach","Luqman khan — outreach","Atika  Aqleem — Organizer","Muhammad Saad — Media","Muhammad Zakria — Project Manager","Hammad Khan — Technical","AMAL KHAN — Graphic Designer","Maham Iqbal — Women Co-lead","Hamza Khan — Hr Manger","Muhammad Abdullah — Graphic Designer CO Lead","Riyan Ahmad Khan — Organizer","Areesh Tahir — Graphic Designer Lead"];
+export const pastMembers=[
+{name:"Muhammad Amjad",role:"Graphic Designer"},
+{name:"Siraat Ali",role:"Technical Lead"},
+{name:"Farhan Ullah",role:"Logistics"},
+{name:"SIRAJ UDDIN",role:"Technical Lead"},
+{name:"Maavia Rizwan",role:"Finance Lead"},
+{name:"Mustafa Ali Qureshi",role:"HR"},
+{name:"Mazhar Shah",role:"Graphic Designer"},
+{name:"Muhammad Afaq",role:"Finance"},
+{name:"Sabir shah",role:"Event Manager"},{name:"Atifaslamkhan",role:"Logistics"},
+{name:"Kashif Ahmad",role:"Video Editor"},
+{name:"Muhammad jawad",role:"Finance"},
+{name:"Shah Hussain",role:"Video Editor"},
+{name:"Rauf Akhtar",role:"Outreach lead"},{name:"Latif ur rahman",role:"Media"},
+{name:"Shahzeb khan",role:"Media"},{name:"Afaq saeed",role:"Technical"},
+{name:"Fawad khan",role:"Media"},{name:"Safir ullah",role:"Web developer"},
+{name:"Tamkeen israr",role:"Women lead",image:"/Image/Team Pic/Tamkeen Israr (past).jpg"},
+{name:"M Anas rashid",role:"Decor"},
+{name:"Muhammad Awais khan",role:"Organizer"},
+{name:"Sajeela Tariq",role:"decor"},
+{name:"Mohammad Arqam Javed",role:"social media"},
+{name:"Muhammad Mobeen",role:"Logistics"},
+{name:"Maira Seher",role:"outreach"},
+{name:"Maemona Rehman",role:"outreach"},
+{name:"Luqman khan",role:"outreach"},
+{name:"Atika  Aqleem",role:"Organizer",image:"/Image/Team Pic/Atika Aqlim (past).jpg"},
+{name:"Muhammad Saad",role:"Media",image:"/Image/Team Pic/saad (past).jpeg"},{name:"Muhammad Zakria",role:"Project Manager",image:"/Image/Team Pic/Muhammad Zakria (past).jpg"},{name:"Hammad Khan",role:"Technical",image:"/Image/Team Pic/Hamad Khan (past).jpg"},{name:"AMAL KHAN",role:"Graphic Designer"},{name:"Maham Iqbal",role:"Women Co-lead",image:"/Image/Team Pic/Maham Iqbal (past).png"},
+{name:"Hamza Khan",role:"Hr Manger",image:"/Image/Team Pic/Hamza Khan (past).jpg"},{name:"Muhammad Abdullah",role:"Graphic Designer CO Lead",image:"/Image/Team Pic/Muhammad Abdullah (past).jpg"},{name:"Riyan Ahmad Khan",role:"Organizer",image:"/Image/Team Pic/Riyan Ahmad (past).png"},{name:"Areesh Tahir",role:"Graphic Designer Lead",image:"/Image/Team Pic/Areesh Tahir (past).png"},
+{name:"Shandana Qadir",role:"Past team member",image:"/Image/Team Pic/Shandana Qadir (past).jfif"}
+];
 export type Review={author:string;text:string;excerpt:string;source:string};
 export const reviews:Review[]=[
 {author:"Wajida Haneef",text:"I would like to sincerely thank Sir Abdul Wahab for conducting such an excellent and valuable course. Your teaching style, guidance, and dedication were truly impressive. You explained every concept in a very clear, practical, and easy-to-understand way. I learned a lot throughout this course, and your support and encouragement made the learning experience even more meaningful. Thank you, Sir, for sharing your knowledge, giving us your valuable time, and teaching us with such professionalism and sincerity. It was truly a great learning experience, and I highly appreciate your efforts. Wishing you continued success and many more achievements ahead. Thank you so much, Sir Abdul Wahab and sociapi society 🌟",excerpt:"You explained every concept in a very clear, practical, and easy-to-understand way.",source:"Course participant review"},
@@ -26,7 +55,7 @@ export const faqs=[
 {group:"Membership",q:"Who can join Sociapi Society?",a:"Students interested in technology, design, media, events, and community leadership can apply."},
 {group:"Membership",q:"Do I need coding experience?",a:"No. Existing programs support students at different experience levels."},
 {group:"Campus Chapters",q:"How do I start a chapter?",a:"Use the campus chapter application. The form opens externally and collects the details needed by the team."},
-{group:"Events & Programs",q:"What are MEHFIL AI and AGENTUM?",a:"They are Sociapi flagship student events focused on practical technology, careers, and community."},
+{group:"Events",q:"What are MEHFIL AI and AGENTUM?",a:"They are Sociapi flagship student events focused on practical technology, careers, and community."},
 {group:"Certificates",q:"How do I verify a certificate?",a:"Enter the certificate ID printed on the certificate or open its QR verification link."},
 {group:"Partnerships",q:"Can organizations partner with Sociapi?",a:"Yes. Sociapi works with event, learning, university, and community partners through its partnership process."},
 {group:"Shop",q:"How does checkout work?",a:"Add merchandise to your cart, enter delivery details, and submit the order. Orders are saved through the existing Sociapi order system."},

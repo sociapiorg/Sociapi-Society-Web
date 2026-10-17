@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { chapters, events, links, partners, programs, stats } from "../data/site";
+import { chapters, events, links, partners, stats } from "../data/site";
 import { ChapterCTA, HomeTeasers } from "./CommunityPages";
 
 const activities = [
   ["01", "Campus chapters", "Build and lead a useful technology community where you study.", "/chapters"],
   ["02", "Events", "Meet practitioners, students, and ideas in rooms designed for real conversation.", "/events"],
-  ["03", "Bootcamps", "Learn practical skills through short, guided community programs.", "/programs"],
-  ["04", "Workshops", "Practice technical and professional skills with other students.", "/opportunities"],
+  ["03", "Workshops", "Practice technical and professional skills with other students.", "/opportunities"],
+  ["04", "Projects", "Build useful ideas with students and campus teams.", "/opportunities"],
   ["05", "Opportunities", "Find ways to volunteer, collaborate, lead, speak, and build.", "/opportunities"],
 ] as const;
 const cityOrder = ["Peshawar", "Mardan", "Nowshera", "Faisalabad", "Lahore", "Multan"];
@@ -44,7 +44,7 @@ function ImpactCounter({ value }: { value: string }) {
 export default function HomeCampaign() {
   const agentum = events[0];
   const mehfil = events[1];
-  const bootcamp = programs[0];
+
   return <div className="campaign">
     <section className="campaign-hero">
       <div className="hero-photo hero-photo-main"><img src="/Image/ss team.jpg" alt="Sociapi students together at Islamia College University Peshawar" /></div>
@@ -72,10 +72,9 @@ export default function HomeCampaign() {
     <section className="event-case"><img src={agentum.image} alt="AGENTUM 2026 stage and audience" /><div className="event-case-veil" /><div className="event-case-index">PROOF / 01</div><div className="event-case-copy"><p>{agentum.date} · {agentum.attendance} students</p><h2>AGENTUM<br /><em>2026</em></h2><div><p>{agentum.summary}</p><Link to={`/events/${agentum.slug}`}>Enter the event story ↗</Link></div></div><div className="event-case-topics">{agentum.topics.map(topic => <span key={topic}>{topic}</span>)}</div></section>
     <section className="mehfil-story"><div className="mehfil-title"><span>PROOF / 02</span><h2>MEHFIL<br />AI 2026</h2><p>A student-led gathering bringing practical AI, careers, and community into one room.</p><Link to={`/events/${mehfil.slug}`}>See what happened ↗</Link></div><div className="mehfil-image main"><img src="/Image/Mehfil_AI.png" alt="MEHFIL AI 2026 event artwork" /></div><div className="mehfil-image crowd"><img src="/Image/2.png" alt="MEHFIL AI community moment" /></div><div className="mehfil-fact"><b>150+</b><span>students in the room</span><small>07 / 05 / 2026<br />PESHAWAR, PK</small></div></section>
 
-    <section className="origin-story"><div className="origin-words"><p>HOW IT STARTED</p><h2>ONE<br />CAMPUS.</h2></div><div className="origin-photos"><img className="origin-a" src="/Image/Agentum Pic/6.jpg" alt="Students taking part in a Sociapi gathering" /><img className="origin-b" src="/Image/Agentum Pic/15.jfif" alt="Sociapi members together" /><span>Islamia College University · Peshawar, Pakistan</span></div><div className="origin-copy"><h3>One campus started it. Nine chapters carried it forward.</h3><p>Sociapi began at Islamia College University Peshawar. Events built momentum, programs kept students learning, and campus leaders took the community into new universities.</p><p className="origin-now">01 CAMPUS → 03 MAJOR EVENTS → 09 CHAPTERS</p><Link to="/about">Read the full story ↗</Link></div></section>
+    <section className="origin-story"><div className="origin-words"><p>HOW IT STARTED</p><h2>ONE<br />CAMPUS.</h2></div><div className="origin-photos"><img className="origin-a" src="/Image/Agentum Pic/6.jpg" alt="Students taking part in a Sociapi gathering" /><img className="origin-b" src="/Image/Agentum Pic/15.jfif" alt="Sociapi members together" /><span>Islamia College University · Peshawar, Pakistan</span></div><div className="origin-copy"><h3>One campus started it. Nine chapters carried it forward.</h3><p>Sociapi began at Islamia College University Peshawar. Events built momentum, campus leaders took the community into new universities.</p><p className="origin-now">01 CAMPUS → 03 MAJOR EVENTS → 09 CHAPTERS</p><Link to="/about">Read the full story ↗</Link></div></section>
     <HomeTeasers />
 
-    <section className="bootcamp-poster"><div className="bootcamp-online" aria-label="Online Summer Bootcamp"><span>ONLINE / SUMMER 2026</span><div className="online-window"><header><i /><i /><i /><b>LIVE ONLINE COHORT</b></header><p>CONNECTING FROM ACROSS PAKISTAN</p><div>{bootcamp.courses.map((course, index) => <span key={course}><small>0{index + 1}</small>{course}</span>)}</div><strong>6 WEEKS · 4 TRACKS · ONLINE</strong></div></div><div className="bootcamp-copy"><p>ONLINE LEARNING / LIVE GUIDANCE</p><h2>SIX WEEKS.<br />FOUR TRACKS.<br /><em>ONE COMMUNITY.</em></h2><div className="bootcamp-tracks">{bootcamp.courses.map((course, index) => <span key={course}><sup>0{index + 1}</sup>{course}</span>)}</div><Link to="/programs">Inside the online Summer Bootcamp ↗</Link></div></section>
     <section className="campaign-partners"><p>BUILT WITH PEOPLE WHO SHOW UP</p><div>{partners.map(partner => <figure key={partner.name}><img src={partner.image} alt={`${partner.name} logo`} /><figcaption>{partner.name}</figcaption></figure>)}</div></section>
     <ChapterCTA />
   </div>;

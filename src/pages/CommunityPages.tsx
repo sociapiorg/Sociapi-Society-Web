@@ -1,17 +1,16 @@
 import { useEffect, useMemo, useState, type FormEvent } from 'react';
 import { Link } from "react-router-dom";
 import { PageHero, Container, Button } from "../components/ui";
-import { faqs, facebookReviews, galleryGroups, pastMembers, reviews, services, teamMembers } from "../data/secondary";
-import { links } from "../data/site";
+import { faqs, facebookReviews, galleryGroups, pastMembers, reviews, services } from "../data/secondary";
+import { links, people } from "../data/site";
 
 import { designProjects, labProjects } from '../data/projects';
 
 export function TeamPage() {
-  const leaders = teamMembers.filter(person => person.tier === "Leadership");
-  const advisor = teamMembers.find(person => person.tier === "Advisor")!;
-  const departmentLeads = teamMembers.filter(person => person.tier === "Department Lead");
-  const coreMembers = teamMembers.filter(person => person.tier === "Core Member");
-  const activeTeamCount = departmentLeads.length + coreMembers.length;
+  const leaders = people.filter(person => person.group === "Leadership");
+  const advisor = people.filter(person => person.group === "Advisor");
+  const coreMembers = people.filter(person => person.group === "Core team");
+  const activeTeamCount = coreMembers.length;
   return <>
     <PageHero eyebrow="Sociapi Society / National Team" title="The people behind the network." text="A student-led national team working across leadership, operations, events, outreach, media, and design." />
     <section className="team-editorial">
@@ -28,27 +27,19 @@ export function TeamPage() {
             <div>
               <span>{person.role}</span>
               <h2>{person.name}</h2>
-              <p>{person.bio}</p>
             </div>
           </article>)}
         </div>
         <section className="advisor-roster">
           <header><span>02 / ADVISOR</span><h2>Academic guidance.</h2></header>
-          <article><div className="team-portrait"><img src={advisor.image} alt={advisor.name} /></div><div><span>{advisor.role}</span><h3>{advisor.name}</h3><p>{advisor.bio}</p></div></article>
+          {advisor.map(person => <article key={person.name}><div className="team-portrait"><img src={person.image} alt={person.name} /></div><div><span>{person.role}</span><h3>{person.name}</h3></div></article>)}
         </section>
         <section className="department-section">
-          <header className="team-section-head"><span>03 / DEPARTMENT LEADS</span><h2>National team leads.</h2><p>People responsible for the systems and disciplines that keep Sociapi moving.</p></header>
-          <div className="department-roster">{departmentLeads.map((person, index) => <article key={person.name}>
+          <header className="team-section-head"><span>03 / CORE TEAM</span><h2>National team members.</h2><p>People responsible for operations, organizing, outreach, design, media, finance, decor, and human resources.</p></header>
+          <div className="department-roster">{coreMembers.map((person, index) => <article key={person.name}>
             <span>{String(index + 1).padStart(2, "0")}</span>
             <div className="roster-portrait"><img src={person.image} alt={person.name} /></div>
-            <p>{person.department}</p><div><h3>{person.name}</h3><p>{person.role}</p></div>
-          </article>)}</div>
-        </section>
-        <section className="core-section">
-          <header className="team-section-head"><span>04 / CORE MEMBERS</span><h2>The wider working team.</h2><p>Members supporting communication, media, event experience, outreach, and operations.</p></header>
-          <div className="core-roster">{coreMembers.map(person => <article key={person.name}>
-            <div className="roster-portrait"><img src={person.image} alt={person.name} /></div>
-            <div><span>{person.department}</span><h3>{person.name}</h3><p>{person.role}</p></div>
+            <div><h3>{person.name}</h3><p>{person.role}</p></div>
           </article>)}</div>
         </section>
         <aside className="chapter-team-note">
@@ -56,10 +47,9 @@ export function TeamPage() {
         </aside>
         <details className="contributors-archive">
           <summary><span>05 / PAST CONTRIBUTORS</span><strong>{pastMembers.length}</strong><b>Open archive</b></summary>
-          <div><p>Former team members whose work contributed to Sociapi's growth.</p><div>{pastMembers.map(member => {
-            const [name, role] = member.split(" — ");
-            return <article key={member}><strong>{name}</strong><span>{role}</span></article>;
-          })}</div></div>
+          <div><p>Former team members whose work contributed to Sociapi's growth.</p><div>{pastMembers.map(member =>
+            <article key={member.name}>{member.image && <img src={member.image} alt={member.name} />}<strong>{member.name}</strong><span>{member.role}</span></article>
+          )}</div></div>
         </details>
       </Container>
     </section>

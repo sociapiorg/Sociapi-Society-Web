@@ -4,8 +4,8 @@ import { links } from "../data/site";
 import { Button, Container } from "./ui";
 import { Seo } from "./Seo";
 
-const primary = [["Home", "/"], ["About", "/about"], ["Chapters", "/chapters"], ["Events", "/events"], ["Programs", "/programs"], ["Opportunities", "/opportunities"]];
-const more = [["Our Team", "/team"], ["Gallery", "/gallery"], ["Reviews", "/reviews"], ["FAQs", "/faqs"], ["Services", "/services"], ["Shop", "/shop"], ["Contact Us", "/contact"], ["Verify Certificate", "/verify"]];
+const primary = [["Home", "/"], ["About", "/about"], ["Chapters", "/chapters"], ["Events", "/events"], ["Our Team", "/team"], ["Opportunities", "/opportunities"]];
+const more = [["Partner With Us", "/partner-with-us"], ["Gallery", "/gallery"], ["Reviews", "/reviews"], ["FAQs", "/faqs"], ["Services", "/services"], ["Shop", "/shop"], ["Contact Us", "/contact"], ["Verify Certificate", "/verify"]];
 
 export function Layout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -30,7 +30,6 @@ export function Layout({ children }: { children: ReactNode }) {
           <button onClick={() => setMoreOpen(!moreOpen)} aria-expanded={moreOpen} aria-haspopup="true">More <span>{moreOpen ? "−" : "+"}</span></button>
           {moreOpen && <div role="menu">{more.map(([label, path]) => <NavLink role="menuitem" key={path} to={path}>{label}<span>↗</span></NavLink>)}</div>}
         </div>
-        <NavLink className="partner-nav" to="/partner-with-us">Partner With Us</NavLink>
       </nav>
       <span className="header-cta"><Button to={links.join} external>Join Sociapi</Button></span>
       <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-nav" aria-label="Toggle navigation"><span /><span /></button>
@@ -51,7 +50,7 @@ function Footer() {
   return <footer><Container>
     <div className="footer-top expanded">
       <div className="footer-brand"><Link to="/" className="brand"><img src="/logo.png" alt="" /><span>SOCIAPI <small>SOCIETY</small></span></Link><p>A student-led technology community connecting campuses, practical learning, events, and student leadership across Pakistan.</p></div>
-      <Column title="Explore" items={[["About", "/about"], ["Chapters", "/chapters"], ["Events", "/events"], ["Programs", "/programs"], ["Gallery", "/gallery"]]} />
+      <Column title="Explore" items={[["About", "/about"], ["Chapters", "/chapters"], ["Events", "/events"], ["Gallery", "/gallery"]]} />
       <Column title="Community" items={[["Our Team", "/team"], ["Opportunities", "/opportunities"], ["Reviews", "/reviews"], ["FAQs", "/faqs"]]} />
       <Column title="Take part" items={[["Join Sociapi", links.join], ["Partnerships", "/partner-with-us"], ["Contact Us", "/contact"], ["Shop", "/shop"]]} />
       <Column title="Resources" items={[["Sociapi Labs", "/services"], ["Verify Certificate", "/verify"]]} />
