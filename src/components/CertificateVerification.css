@@ -17,3 +17,9 @@
 .verify-page .verify-note {
   background: #333333;
 }
+
+@media (max-width: 900px) {
+  .verify-body > .container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -19,9 +19,14 @@ const work = [
   "Support for exploring modern technology and career paths",
 ];
 
+const shortBios: Record<string, string> = {
+  "Muhammad Zuhair Zeb": "Founded Sociapi at Islamia College University Peshawar to help students learn technology through practical work, projects, and community leadership.",
+  "Muhammad Mudassir": "Helps shape Sociapi's technology direction, with interests in computer vision, AI agents, and web development.",
+  "Dr. Naveed Abbas": "Provides academic guidance and mentorship for responsible, practical student technology work.",
+};
+
 export default function AboutPage() {
-  const founder = teamMembers.find(person => person.role === "Founder");
-  const featuredPeople = teamMembers.filter(person => ["Co-Founder", "Advisor"].includes(person.role));
+  const featuredPeople = teamMembers.filter(person => ["Founder", "Co-Founder", "Advisor"].includes(person.role));
 
   return <div className="about-editorial">
     <section className="about-hero-new">
@@ -31,6 +36,29 @@ export default function AboutPage() {
         <div>
           <p>Sociapi Society is a student-led AI and technology community connecting students across universities in Pakistan.</p>
           <p>We help students turn ideas into practical skills, real projects, and career opportunities.</p>
+        </div>
+      </Container>
+    </section>
+
+    <section className="about-people">
+      <Container>
+        <header><p>PEOPLE BEHIND SOCIAPI</p><h2>Student-led, built together.</h2><span>Leadership and academic guidance for a growing student community.</span></header>
+        <div className="about-people-grid">{featuredPeople.map(person => <article key={person.name}>
+          <img src={person.image} alt={`${person.name}, ${person.role}`} loading="lazy" />
+          <div><p>{person.role === "Advisor" ? "ACADEMIC ADVISOR" : person.role.toUpperCase()}</p><h3>{person.name}</h3><span>{shortBios[person.name] ?? person.bio}</span></div>
+        </article>)}</div>
+        <Link className="about-people-link" to="/team">Meet the full team <span aria-hidden="true">&#8599;</span></Link>
+
+        <div className="founder-message">
+          <article>
+            <header><p>A NOTE FROM THE FOUNDER</p><h3>Muhammad Zuhair Zeb</h3></header>
+            <blockquote>{founderMessage.quote}</blockquote>
+            <details className="founder-message-details">
+              <summary>Read the founder's full message <span aria-hidden="true">+</span></summary>
+              <div className="founder-message-copy">{founderMessage.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>
+              <p className="founder-message-signoff">From Ideas to Intelligence.</p>
+            </details>
+          </article>
         </div>
       </Container>
     </section>
@@ -57,41 +85,6 @@ export default function AboutPage() {
           <li>Connect students with industry, mentors, and career opportunities</li>
         </ul></article>
       </Container>
-    </section>
-
-    {founder && <section className="founder-story">
-      <Container>
-        <img src={founder.image} alt={`${founder.name}, Founder of Sociapi Society`} loading="lazy" />
-        <div>
-          <p>FOUNDER</p><h2>{founder.name}</h2>
-          <p>From Swabi, Pakistan, Muhammad Zuhair Zeb studies Artificial Intelligence at Islamia College University Peshawar. He founded Sociapi to give students a place to explore technology, build practical skills, and lead meaningful projects together.</p>
-          <p>Sociapi began at Islamia College University Peshawar and has grown into a student community connecting people across universities.</p>
-          <Link to="/team">Meet the full team &#8599;</Link>
-        </div>
-      </Container>
-    </section>}
-
-    <section className="about-people">
-      <Container>
-        <header><p>LEADERSHIP &amp; GUIDANCE</p><h2>Built together, with room to learn.</h2><span>Student leadership, supported by academic guidance.</span></header>
-        <div className="about-people-grid">{featuredPeople.map(person => <article key={person.name}>
-          <img src={person.image} alt={`${person.name}, ${person.role}`} loading="lazy" />
-          <div><p>{person.role === "Advisor" ? "ACADEMIC GUIDANCE" : person.role.toUpperCase()}</p><h3>{person.name}</h3><span>{person.bio}</span></div>
-        </article>)}</div>
-        <Link className="about-people-link" to="/team">See all team members &#8599;</Link>
-      </Container>
-    </section>
-
-    <section className="founder-message">
-      <Container><article>
-        <header><p>A MESSAGE FROM THE FOUNDER</p><h2>Muhammad Zuhair Zeb</h2><span>Founder, Sociapi Society</span></header>
-        <blockquote>{founderMessage.quote}</blockquote>
-        <details className="founder-message-details">
-          <summary>Read the founder?s full message <span aria-hidden="true">?</span></summary>
-          <div className="founder-message-copy">{founderMessage.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>
-          <p className="founder-message-signoff">From Ideas to Intelligence.</p>
-        </details>
-      </article></Container>
     </section>
 
     <section className="about-signoff">
