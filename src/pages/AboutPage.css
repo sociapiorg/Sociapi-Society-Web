@@ -116,10 +116,10 @@
 .about-editorial .about-focus-heading h2 em{color:var(--about-accent);font-style:normal}
 .about-editorial .about-focus-heading>p:last-child{max-width:460px;margin:22px 0 0;color:#d6dbd6;font-size:16px;line-height:1.7}
 .about-editorial .about-focus-list{padding-top:4px}
-.about-editorial .about-focus-list>p{margin:0 0 13px;color:#bceba4;font-size:12px;font-weight:800;letter-spacing:.15em}
-.about-editorial .about-focus-list ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
-.about-editorial .about-focus-list li{display:grid;grid-template-columns:32px 1fr;column-gap:15px;align-items:center;min-height:74px;padding:14px;border:1px solid #606761;border-radius:4px;background:#303633;color:#fff;font-size:15px;line-height:1.35}
-.about-editorial .about-focus-list li>span{display:grid;width:32px;height:32px;place-items:center;justify-self:center;border:1px solid #7b8d7c;border-radius:50%;color:#d4edc8;font-size:11px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.about-editorial .about-focus-list>p{margin:0 0 17px;color:#bceba4;font-size:12px;font-weight:800;letter-spacing:.15em}
+.about-editorial .about-focus-list ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
+.about-editorial .about-focus-list li{display:grid;grid-template-columns:34px minmax(0,1fr);column-gap:15px;align-items:center;min-width:0;min-height:82px;padding:16px;border:1px solid #69746c;border-radius:4px;background:#303633;color:#fff;font-size:16px;line-height:1.3}
+.about-editorial .about-focus-list li>span{display:grid;width:34px;height:34px;place-items:center;justify-self:center;border:1px solid #899c8a;border-radius:50%;background:#39443c;color:#d4edc8;font:700 11px/1 var(--display);font-variant-numeric:tabular-nums;letter-spacing:.02em}
 .about-editorial .about-events{background:var(--about-paper)}
 .about-editorial .about-events-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:36px}
 .about-editorial .about-events-heading .about-kicker{color:var(--about-brand)}
@@ -224,8 +224,8 @@ footer .footer-brand p,footer .footer-top>div:not(:first-child) a,footer .footer
  .about-editorial .about-focus-heading h2{margin:18px 0;font-size:clamp(2.7rem,10vw,4rem)}
  .about-editorial .about-focus-heading>p:last-child{font-size:15px}
  .about-editorial .about-focus-list ul{grid-template-columns:repeat(2,minmax(0,1fr))}
- .about-editorial .about-focus-list li{grid-template-columns:28px 1fr;column-gap:12px;min-height:66px;padding:11px;font-size:14px}
- .about-editorial .about-focus-list li>span{width:28px;height:28px}
+ .about-editorial .about-focus-list li{grid-template-columns:30px minmax(0,1fr);column-gap:11px;min-height:70px;padding:12px;font-size:15px}
+ .about-editorial .about-focus-list li>span{width:30px;height:30px}
  .about-editorial .about-events-heading{align-items:start;flex-direction:column;margin-bottom:25px}
  .about-editorial .about-events-heading h2{font-size:clamp(2.7rem,10vw,4.5rem)}
  .about-editorial .about-event-grid{grid-template-columns:1fr;gap:25px}
