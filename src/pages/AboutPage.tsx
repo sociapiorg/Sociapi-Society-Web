@@ -66,7 +66,7 @@ export default function AboutPage() {
           <p>FOUNDER</p><h2>{founder.name}</h2>
           <p>From Swabi, Pakistan, Muhammad Zuhair Zeb studies Artificial Intelligence at Islamia College University Peshawar. He founded Sociapi to give students a place to explore technology, build practical skills, and lead meaningful projects together.</p>
           <p>Sociapi began at Islamia College University Peshawar and has grown into a student community connecting people across universities.</p>
-          <Link to="/team">Meet the full team ?</Link>
+          <Link to="/team">Meet the full team &#8599;</Link>
         </div>
       </Container>
     </section>}
@@ -78,7 +78,7 @@ export default function AboutPage() {
           <img src={person.image} alt={`${person.name}, ${person.role}`} loading="lazy" />
           <div><p>{person.role === "Advisor" ? "ACADEMIC GUIDANCE" : person.role.toUpperCase()}</p><h3>{person.name}</h3><span>{person.bio}</span></div>
         </article>)}</div>
-        <Link className="about-people-link" to="/team">See all team members ?</Link>
+        <Link className="about-people-link" to="/team">See all team members &#8599;</Link>
       </Container>
     </section>
 
