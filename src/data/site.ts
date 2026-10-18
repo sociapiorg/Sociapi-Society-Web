@@ -13,7 +13,7 @@ export const people=[
 {name:"Muhammad Zulkifal",role:"Projects and Operations Coordinator",image:"/Image/Team Pic/Muhammad Zulkifal (Event Manger).jpg",group:"Core team"},
 {name:"Aqsa Sajid",role:"Women Lead",image:"/Image/Team Pic/Aqsa sajid.jfif",group:"Core team"},
 {name:"Haniya Mumtaz",role:"Organizer Lead",image:"/Image/Team Pic/HANIYA MUMTAZ.JPG",group:"Core team"},
-{name:"Danyal Yousafzai",role:"Organizer Co-Lead",image:"/Image/Team Pic/DANI Yousufzai.jpg",group:"Core team"},
+{name:"Danyal Yousafzai",role:"Organizer Co-Lead",image:"Image/Team Pic/Danyal y.jpg",group:"Core team"},
 {name:"Umair Ahmad Jan",role:"Organizer",image:"/Image/Team Pic/Umair Ahmad.png",group:"Core team"},
 {name:"Irfan Ullah",role:"Organizer",image:"Image/Team Pic/irfan.jfif",group:"Core team"},
 {name:"Hamid Ali Khan",role:"Organizer",image:"/Image/Team Pic/hamid ali khan.jfif",group:"Core team"},
