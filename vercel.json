@@ -2,13 +2,21 @@
   "redirects": [
     { "source": "/programs", "destination": "/opportunities", "permanent": true },
     { "source": "/partner", "destination": "/partner-with-us", "permanent": true },
-    { "source": "/career", "destination": "/opportunities", "permanent": true }
+    { "source": "/career", "destination": "/opportunities", "permanent": true },
+    { "source": "/labs", "destination": "/services", "permanent": true },
+    { "source": "/faq", "destination": "/faqs", "permanent": true }
   ],
   "rewrites": [
     { "source": "/verify/:certificateId", "destination": "/verify" }
   ],
   "cleanUrls": true,
   "headers": [
+    {
+      "source": "/verify/:certificateId",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [

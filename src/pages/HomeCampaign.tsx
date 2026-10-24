@@ -22,7 +22,7 @@ function ImpactCounter({ value }: { value: string }) {
   const target = Number(value.match(/\d+/)?.[0] ?? 0);
   const digits = value.match(/\d+/)?.[0].length ?? 1;
   const suffix = value.replace(/\d+/, "");
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target);
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
