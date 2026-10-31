@@ -23,7 +23,7 @@ export function Layout({ children }: { children: ReactNode }) {
   return <><Seo />
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="header"><Container className="header-inner">
-      <Link to="/" className="brand"><img src="/logo.png" alt="" /><span>SOCIAPI <small>SOCIETY</small></span></Link>
+      <Link to="/" className="brand"><img src="/logo.png" alt="Sociapi Society logo" /><span>SOCIAPI <small>SOCIETY</small></span></Link>
       <nav className="desktop-nav" aria-label="Main navigation">
         {primary.map(([label, path]) => <NavLink key={path} to={path}>{label}</NavLink>)}
         <div className="more-menu" ref={moreRef}>
@@ -50,7 +50,7 @@ function Column({ title, items }: { title: string; items: [string, string][] }) 
 function Footer() {
   return <footer><Container>
     <div className="footer-top expanded">
-      <div className="footer-brand"><Link to="/" className="brand"><img src="/logo.png" alt="" /><span>SOCIAPI <small>SOCIETY</small></span></Link><p>A student-led technology community connecting campuses, practical learning, events, and student leadership across Pakistan.</p></div>
+      <div className="footer-brand"><Link to="/" className="brand"><img src="/logo.png" alt="Sociapi Society logo" /><span>SOCIAPI <small>SOCIETY</small></span></Link><p>A student-led technology community connecting campuses, practical learning, events, and student leadership across Pakistan.</p></div>
       <Column title="Explore" items={[["About", "/about"], ["Chapters", "/chapters"], ["Events", "/events"], ["Gallery", "/gallery"]]} />
       <Column title="Community" items={[["Our Team", "/team"], ["Opportunities", "/opportunities"], ["Reviews", "/reviews"], ["FAQs", "/faqs"]]} />
       <Column title="Take part" items={[["Join Sociapi", links.join], ["Partnerships", "/partner-with-us"], ["Contact Us", "/contact"], ["Shop", "/shop"]]} />

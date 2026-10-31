@@ -1,0 +1,13 @@
+# Sociapi Society
+
+> Sociapi Society is a student-led AI and technology community connecting university students through campus chapters, practical learning, events, and student leadership in Pakistan.
+
+- Website: https://sociapis.vercel.app/
+- About: https://sociapis.vercel.app/about
+- University chapters: https://sociapis.vercel.app/chapters
+- Events and event reports: https://sociapis.vercel.app/events
+- Opportunities: https://sociapis.vercel.app/opportunities
+- Partnership information: https://sociapis.vercel.app/partner-with-us
+- Contact: https://sociapis.vercel.app/contact
+
+Chapter pages describe Sociapi's student-led campus communities. They do not by themselves assert university endorsement or formal affiliation.
