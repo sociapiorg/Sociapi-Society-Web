@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Container } from "../components/ui";
 import { products, type Product } from "../data/secondary";
-import { orderService, type CreateOrderInput } from "../services/orders";
 
 const DARAZ_SHIRT_URL = "https://www.daraz.pk/products/oversized-baggy-t-shirt-for-men-and-women-unisex-casual-streetwear-tee-i1981174376-s14069074976.html?";
 const DARAZ_LAPTOP_SKIN_URL = "https://www.daraz.pk/products/i1981808757.html?spm=Seller_PK.24863640.table_online_product.1.1a2c2a97CIDRsh";
