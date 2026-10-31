@@ -504,3 +504,5 @@ footer .footer-bottom{color:#d3d7d4;font-size:14px}
 
 /* Semantic activity list keeps the existing card grid while exposing list structure. */
 ul.practice-board{list-style:none;margin:0;padding:0}.practice-piece-link{position:absolute;inset:0;display:block;padding:28px;color:inherit}.practice-piece-link>span{font-size:10px;letter-spacing:.15em}.practice-piece:focus-within{background:#dfe5dc;transform:none;outline:3px solid var(--green);outline-offset:-3px}.piece-2:focus-within{background:#3b403d;color:#fff}.piece-3:focus-within,.piece-5:focus-within{background:#60904d;color:#fff}
+
+.policy-content{max-width:850px;padding-block:50px 90px}.policy-content h2{margin:42px 0 12px;font-size:clamp(1.35rem,2.5vw,2rem);letter-spacing:-.03em}.policy-content p,.policy-content li{color:var(--muted)}.policy-content li{margin:10px 0}.policy-content ul{padding-left:24px}.policy-content a{color:var(--green);text-decoration:underline}.footer-bottom nav{display:flex;gap:16px}.footer-bottom nav a{color:#d3d7d4;font-size:13px}
