@@ -1,0 +1,250 @@
+{
+  "/Image/ss team.jpg": {
+    "width": 1440,
+    "height": 990,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/ss-team-9e47ad48b6-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/ss-team-9e47ad48b6-960.avif"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/ss-team-9e47ad48b6-1440.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/ss-team-9e47ad48b6-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/ss-team-9e47ad48b6-960.webp"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/ss-team-9e47ad48b6-1440.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Mehfil_AI.png": {
+    "width": 1080,
+    "height": 1350,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/mehfil-ai-a3ef75605f-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/mehfil-ai-a3ef75605f-960.avif"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/mehfil-ai-a3ef75605f-1080.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/mehfil-ai-a3ef75605f-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/mehfil-ai-a3ef75605f-960.webp"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/mehfil-ai-a3ef75605f-1080.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Agentum Pic/15.jfif": {
+    "width": 940,
+    "height": 788,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/15-b1f264732a-480.avif"
+        },
+        {
+          "width": 940,
+          "src": "/optimized-images/15-b1f264732a-940.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/15-b1f264732a-480.webp"
+        },
+        {
+          "width": 940,
+          "src": "/optimized-images/15-b1f264732a-940.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Agentum Pic/12.png": {
+    "width": 3024,
+    "height": 4032,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/12-ae4198d548-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/12-ae4198d548-960.avif"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/12-ae4198d548-1440.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/12-ae4198d548-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/12-ae4198d548-960.webp"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/12-ae4198d548-1440.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Agentum Pic/14.png": {
+    "width": 3024,
+    "height": 4032,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/14-3f0ce0aee4-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/14-3f0ce0aee4-960.avif"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/14-3f0ce0aee4-1440.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/14-3f0ce0aee4-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/14-3f0ce0aee4-960.webp"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/14-3f0ce0aee4-1440.webp"
+        }
+      ]
+    }
+  },
+  "/Image/3.png": {
+    "width": 1080,
+    "height": 1350,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/3-5ec2a5035f-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/3-5ec2a5035f-960.avif"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/3-5ec2a5035f-1080.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/3-5ec2a5035f-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/3-5ec2a5035f-960.webp"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/3-5ec2a5035f-1080.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Agentum Pic/IMG_5921.png": {
+    "width": 3024,
+    "height": 4032,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/img-5921-5075ea5289-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/img-5921-5075ea5289-960.avif"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/img-5921-5075ea5289-1440.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/img-5921-5075ea5289-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/img-5921-5075ea5289-960.webp"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/img-5921-5075ea5289-1440.webp"
+        }
+      ]
+    }
+  },
+  "/Our Partner/Community Partner/FarabiUAPLogoFull - Jawad Ahmad.png": {
+    "width": 1587,
+    "height": 2245,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/farabiuaplogofull-jawad-ahmad-60ff6f8bcc-320.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/farabiuaplogofull-jawad-ahmad-60ff6f8bcc-320.webp"
+        }
+      ]
+    }
+  }
+}

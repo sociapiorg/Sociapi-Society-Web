@@ -5,6 +5,7 @@ import { faqs, facebookReviews, galleryGroups, pastMembers, reviews, services } 
 import { links, people } from "../data/site";
 
 import { designProjects, labProjects } from '../data/projects';
+import { ResponsiveImage } from "../components/ResponsiveImage";
 
 export function TeamPage() {
   const leaders = people.filter(person => person.group === "Leadership");
@@ -265,11 +266,11 @@ function ContactForm() {
 }
 
 export function HomeTeasers() {
-  return <><section className="home-gallery-teaser"><div><p>INSIDE SOCIAPI</p><h2>Not stock photos.<br />Real rooms. Real students.</h2><Link to="/gallery">Open the gallery ↗</Link></div><img src="/Image/Agentum Pic/12.png" alt="Sociapi event moment" /><img src="/Image/Agentum Pic/14.png" alt="Sociapi community moment" /><img src="/Image/3.png" alt="MEHFIL AI moment" /></section>
+  return <><section className="home-gallery-teaser"><div><p>INSIDE SOCIAPI</p><h2>Not stock photos.<br />Real rooms. Real students.</h2><Link to="/gallery">Open the gallery ↗</Link></div><ResponsiveImage src="/Image/Agentum Pic/12.png" alt="Sociapi event moment" width="3024" height="4032" loading="lazy" decoding="async" sizes="(max-width: 700px) 100vw, 55vw" /><ResponsiveImage src="/Image/Agentum Pic/14.png" alt="Sociapi community moment" width="3024" height="4032" loading="lazy" decoding="async" sizes="(max-width: 700px) 50vw, 20vw" /><ResponsiveImage src="/Image/3.png" alt="MEHFIL AI moment" width="1080" height="1350" loading="lazy" decoding="async" sizes="(max-width: 700px) 50vw, 20vw" /></section>
     <section className="home-reviews"><p>COMMUNITY FEEDBACK</p><div>{reviews.slice(0, 3).map(review => <blockquote key={review.author}><p>“{review.excerpt}”</p><footer>{review.author}</footer></blockquote>)}</div><Link to="/reviews">Read all feedback ↗</Link></section>
   </>;
 }
 
 export function ChapterCTA() {
-  return <section className="chapter-final"><img src="/Image/Agentum Pic/IMG_5921.png" alt="Sociapi community together" /><div /><p>YOUR CAMPUS COULD BE NEXT.</p><h2>THE NEXT CHAPTER<br />STARTS WITH STUDENTS.</h2><nav><Button to={links.chapter}>Start a Chapter ↗</Button><Button to={links.join} external secondary>Join a Chapter ↗</Button></nav></section>;
+  return <section className="chapter-final"><ResponsiveImage src="/Image/Agentum Pic/IMG_5921.png" alt="Sociapi community together" width="3024" height="4032" loading="lazy" decoding="async" sizes="100vw" /><div /><p>YOUR CAMPUS COULD BE NEXT.</p><h2>THE NEXT CHAPTER<br />STARTS WITH STUDENTS.</h2><nav><Button to={links.chapter}>Start a Chapter ↗</Button><Button to={links.join} external secondary>Join a Chapter ↗</Button></nav></section>;
 }
