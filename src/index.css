@@ -520,3 +520,4 @@ ul.practice-board{list-style:none;margin:0;padding:0}.practice-piece-link{positi
 .flagship-intro h2 + .direct-answer{margin:18px 0 0;line-height:1.65}
 .chapter-data h2 + .direct-answer{margin-top:14px}
 .practice-spread header{row-gap:24px}
+@media(max-width:650px){.practice-piece h3{font-size:clamp(1.55rem,8vw,2.4rem);overflow-wrap:normal;word-break:normal;text-wrap:balance}}
