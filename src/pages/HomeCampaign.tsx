@@ -16,6 +16,8 @@ const impactStats = [
   { value: String(chapters.length).padStart(2, "0"), label: "Chapters across Pakistan" },
   { value: String(new Set(chapters.map(chapter => chapter.city)).size).padStart(2, "0"), label: "Cities represented" },
   { value: String(events.length).padStart(2, "0"), label: "Programs and events" },
+  { value: "520+", label: "Participants reached" },
+  { value: "38+", label: "Community members" },
 ];
 
 function ImpactCounter({ value }: { value: string }) {
@@ -23,7 +25,7 @@ function ImpactCounter({ value }: { value: string }) {
   const target = Number(value.match(/\d+/)?.[0] ?? 0);
   const digits = value.match(/\d+/)?.[0].length ?? 1;
   const suffix = value.replace(/\d+/, "");
-  const [count, setCount] = useState(target);
+  const [count, setCount] = useState(0);
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
@@ -33,7 +35,7 @@ function ImpactCounter({ value }: { value: string }) {
       if (!entry.isIntersecting) return;
       const start = performance.now();
       const tick = (now: number) => {
-        const progress = Math.min((now - start) / 2600, 1);
+        const progress = Math.min((now - start) / 3400, 1);
         const eased = progress < .5 ? 4 * progress * progress * progress : 1 - Math.pow(-2 * progress + 2, 3) / 2;
         setCount(Math.round(target * eased));
         if (progress < 1) frame = requestAnimationFrame(tick);

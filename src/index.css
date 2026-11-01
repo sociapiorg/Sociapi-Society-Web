@@ -512,3 +512,11 @@ ul.practice-board{list-style:none;margin:0;padding:0}.practice-piece-link{positi
 @media(max-width:900px){.national-intro>div:first-of-type{max-width:none}}
 
 .campaign-hero-bottom>p.direct-answer{max-width:500px}.chapter-data-section{padding:0 4vw 70px!important;background:#292c2a;color:#f2f3f0}.chapter-data{padding:26px 30px;border:1px solid #555957;background:#242725}.chapter-data h2{margin:0;font:600 clamp(1.35rem,2.3vw,2rem)/1.2 var(--body)}.chapter-data>.direct-answer{margin:12px 0 22px;color:#bac0bc}.chapter-table-scroll{overflow-x:auto}.chapter-data table{width:100%;border-collapse:collapse;text-align:left;font-size:14px}.chapter-data caption{text-align:left;margin-bottom:10px;color:#aeb3af;font-size:12px}.chapter-data th,.chapter-data td{padding:12px;border-top:1px solid #555957}.chapter-data th{color:#f2f3f0}.chapter-data td{color:#bac0bc}.chapter-data a{color:var(--lime);text-decoration:underline}.direct-answer{line-height:1.6}
+
+/* Keep campaign section copy from visually colliding at display sizes. */
+.campaign h2 + p.direct-answer{margin-block-start:clamp(14px,1.5vw,22px);line-height:1.65}
+.national-intro h2 + .direct-answer{margin:20px 0 0;max-width:62ch}
+.practice-spread header h2 + .direct-answer{margin:20px 0 0}
+.flagship-intro h2 + .direct-answer{margin:18px 0 0;line-height:1.65}
+.chapter-data h2 + .direct-answer{margin-top:14px}
+.practice-spread header{row-gap:24px}
