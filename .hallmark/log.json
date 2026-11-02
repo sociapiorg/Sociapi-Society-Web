@@ -1,0 +1,38 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "shape": "bento-grid",
+  "theme": "garden",
+  "axes": [
+   "light",
+   "roman-serif",
+   "chromatic-green"
+  ],
+  "hero": "poster",
+  "nav": "shared-site-navigation",
+  "footer": "shared-site-footer",
+  "imagery": "existing-Sociapi-photographs",
+  "photos": [],
+  "entry": "Sociapi homepage",
+  "fingerprint": "garden-editorial-poster-campus-community",
+  "sections": [
+   "hero and impact",
+   "national chapter atlas",
+   "chapter directory table",
+   "student participation",
+   "event stories",
+   "origin story",
+   "gallery, reviews, and partners",
+   "chapter CTA"
+  ],
+  "signature": "students gathered at Islamia College University Peshawar",
+  "waived": [
+   "49b: footer credit wraps at 320px to avoid overflow",
+   "72: full-width headline line boxes and photo caption intentionally align to parent edges",
+   "23: compact filled hero primary action"
+  ],
+  "prompt": "Redesign the Sociapi homepage while keeping existing content, routes, imagery, and shared chrome.",
+  "date": "2026-11-01"
+ }
+]
