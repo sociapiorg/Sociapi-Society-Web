@@ -1,8 +1,142 @@
-import{readFile}from"node:fs/promises";import{join}from"node:path";import{chapters,events}from"../src/data/site.ts";const routes=["/","/about","/chapters","/events","/opportunities","/partner-with-us","/team","/gallery","/reviews","/faqs","/services","/shop","/contact","/chapter-application","/privacy","/terms",...events.map(x=>`/events/${x.slug}`),...chapters.map(x=>`/chapters/${x.slug}`)],titles=new Set,descriptions=new Set;
-for(const route of routes){const file=route==="/"?join("dist","index.html"):join("dist",route.slice(1),"index.html"),html=await readFile(file,"utf8"),expected=`https://sociapis.vercel.app${route==="/"?"":route}`,title=html.match(/<title>([^<]+)<\/title>/i)?.[1],description=html.match(/<meta name="description" content="([^"]+)"/i)?.[1],h1=(html.match(/<h1[ >]/gi)||[]).length,imageTags=[...html.matchAll(/<img\b[^>]*>/gi)].map(x=>x[0]),checks={title:!!title,description:!!description,canonical:html.includes(`rel="canonical" href="${expected}"`),robots:/<meta name="robots" content="index, follow/i.test(html),h1:h1===1,imagesHaveAlt:!/<img\b(?![^>]*\balt\s*=)[^>]*>/i.test(html),imageAttributes:imageTags.every(tag=>/\bwidth="[1-9][0-9]*"/.test(tag)&&/\bheight="[1-9][0-9]*"/.test(tag)&&/\bloading="(?:lazy|eager)"/.test(tag)&&/\bdecoding="async"/.test(tag)),content:/<main id="main">[\s\S]{300,}<\/main>/i.test(html)};const failed=Object.entries(checks).filter(([,ok])=>!ok).map(([x])=>x);if(failed.length)throw Error(`${route}: failed ${failed.join(", ")} (H1 count: ${h1})`);titles.add(title);descriptions.add(description)}if(titles.size!==routes.length)throw Error("Duplicate page titles detected");if(descriptions.size!==routes.length)throw Error("Duplicate meta descriptions detected");const homeHtml=await readFile(join("dist","index.html"),"utf8"),homeDescriptions=[...homeHtml.matchAll(/<meta name="description" content="([^"]*)"/gi)],homeTitles=[...homeHtml.matchAll(/<title>/gi)],homeCanonicals=[...homeHtml.matchAll(/<link rel="canonical"/gi)];if(homeDescriptions.length!==1||homeDescriptions[0][1].length<140||homeDescriptions[0][1].length>160)throw Error("Home description must appear once and be 140-160 characters");if(homeTitles.length!==1||homeCanonicals.length!==1)throw Error("Home must have one title and one canonical");if(!homeHtml.includes("Sociapi Society connects students across Pakistan through technology chapters, practical AI workshops, events, projects, and leadership opportunities."))throw Error("Home description does not match the approved text");const verify=await readFile(join("dist","verify/index.html"),"utf8");if(!/<meta name="robots" content="noindex, follow">/i.test(verify))throw Error("Certificate form must be noindex");const certificate=await readFile("dist/verify/__certificate_id__/index.html","utf8");if(!/<meta name="robots" content="noindex, follow">/i.test(certificate))throw Error("Certificate result is missing initial noindex");if(!certificate.includes("Certificate ID")||!certificate.includes("Verify Certificate"))throw Error("Certificate result route did not render the verification form");const xml=await readFile("dist/sitemap.xml","utf8"),robots=await readFile("dist/robots.txt","utf8"),urls=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(x=>x[1]),expectedUrls=[...routes].map(x=>`https://sociapis.vercel.app${x==="/"?"/":x}`);if(!robots.includes("Sitemap: https://sociapis.vercel.app/sitemap.xml"))throw Error("Robots.txt sitemap declaration is missing");if(urls.length!==new Set(urls).size)throw Error("Sitemap contains duplicate URLs");const missingUrls=expectedUrls.filter(x=>!urls.includes(x)),extraUrls=urls.filter(x=>!expectedUrls.includes(x));if(missingUrls.length||extraUrls.length)throw Error(`Sitemap route mismatch. Missing: ${missingUrls.join(", ")}; extra: ${extraUrls.join(", ")}`);if(urls.some(x=>x.includes("__certificate_id__")||x.includes("/verify")||x.includes("/labs")||x==="https://sociapis.vercel.app/faq"||x.includes("/faq/")||x==="https://sociapis.vercel.app/partner"||x.includes("/partner/")))throw Error("Sitemap includes a private result or alias path");const agent=await readFile("dist/events/agentum-2026/index.html","utf8"),mehfil=await readFile("dist/events/mehfil-ai-2026/index.html","utf8"),chapter=await readFile("dist/chapters/uet-mardan/index.html","utf8"),faq=await readFile("dist/faqs/index.html","utf8"),home=await readFile("dist/index.html","utf8");for(const[event,name]of[[agent,"Agentum"],[mehfil,"Mehfil AI"]])if((event.match(/"@type":"Event"/g)||[]).length!==1||!event.includes('"@type":"BreadcrumbList"'))throw Error(`${name}: expected one Event and a BreadcrumbList schema`);if(!chapter.includes('"@type":"BreadcrumbList"'))throw Error("UET Mardan: missing breadcrumb schema");if(!faq.includes('"@type":"FAQPage"')||(faq.match(/"@type":"Question"/g)||[]).length!==9)throw Error("FAQs: expected matching visible FAQPage schema");if(!home.includes('"@type":"Organization"')||!home.includes('"@type":"WebSite"'))throw Error("Home: missing Organization or WebSite schema");if(!home.includes('"@type":"WebPage"'))throw Error("Home: missing WebPage schema");if(!home.includes('<ul class="practice-board"'))throw Error("Home activities must render as a semantic list");if(!home.includes('<ol>' )||!home.includes("How can students get started?"))throw Error("Home must render the participation steps as a semantic ordered list");if(!home.includes('"@type":"HowTo"')||!home.includes('"@type":"HowToStep"'))throw Error("Home must include HowTo schema matching the participation steps");if(!home.includes("<table>")||!home.includes("<caption>Listed Sociapi chapters by city</caption>"))throw Error("Home must render the chapter directory as a semantic table");if(!home.includes("<h2>Where does Sociapi connect campuses?</h2>")||!home.includes("<h2>What happens at Sociapi events?</h2>")||(!home.includes("How can students")||!home.includes("take part?")))throw Error("Home should provide question-style section headings");if(!home.includes('aria-label="09"'))throw Error("Homepage counter value is not present in initial HTML");const responsivePictures=[...home.matchAll(/<picture\b[\s\S]*?<\/picture>/gi)].map(([picture])=>picture);
-if(responsivePictures.length!==8)throw Error(`Homepage should have eight responsive picture elements; found ${responsivePictures.length}`);
-for(const picture of responsivePictures){const img=picture.match(/<img\b[^>]*>/i)?.[0]??"";if(!picture.includes('type="image/avif"')||!picture.includes('type="image/webp"')||!/srcset=/i.test(picture)||!/<img\b[^>]*\balt="[^"]*"/i.test(img)||!/[\s]width="[1-9][0-9]*"/i.test(img)||!/[\s]height="[1-9][0-9]*"/i.test(img))throw Error("Responsive picture is missing a modern format, srcset, alt text, or intrinsic dimensions");}
-for(const script of [...home.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)])JSON.parse(script[1]);
-for(const script of [...faq.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)])JSON.parse(script[1]);
-if(!home.includes('"primaryImageOfPage"'))throw Error("Home WebPage schema must identify its primary image");
-console.log(`SEO audit passed: ${routes.length} indexable routes, unique metadata, route content, canonicals, sitemap, eight responsive pictures, and parseable JSON-LD.`)
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { chapters, events } from "../src/data/site.ts";
+
+const routes = [
+  "/", "/about", "/chapters", "/events", "/opportunities", "/partner-with-us", "/team", "/gallery",
+  "/reviews", "/faqs", "/services", "/shop", "/contact", "/chapter-application", "/privacy", "/terms",
+  ...events.map(({ slug }) => `/events/${slug}`),
+  ...chapters.map(({ slug }) => `/chapters/${slug}`),
+];
+const titles = new Set();
+const descriptions = new Set();
+
+for (const route of routes) {
+  const file = route === "/" ? join("dist", "index.html") : join("dist", route.slice(1), "index.html");
+  const html = await readFile(file, "utf8");
+  const expected = `https://sociapis.vercel.app${route === "/" ? "" : route}`;
+  const title = html.match(/<title>([^<]+)<\/title>/i)?.[1];
+  const description = html.match(/<meta name="description" content="([^"]+)"/i)?.[1];
+  const h1 = (html.match(/<h1[ >]/gi) || []).length;
+  const imageTags = [...html.matchAll(/<img\b[^>]*>/gi)].map(([tag]) => tag);
+  const checks = {
+    title: !!title,
+    description: !!description,
+    canonical: html.includes(`rel="canonical" href="${expected}"`),
+    robots: /<meta name="robots" content="index, follow/i.test(html),
+    h1: h1 === 1,
+    imagesHaveAlt: !/<img\b(?![^>]*\balt\s*=)[^>]*>/i.test(html),
+    imageAttributes: imageTags.every((tag) =>
+      /\bwidth="[1-9][0-9]*"/.test(tag)
+      && /\bheight="[1-9][0-9]*"/.test(tag)
+      && /\bloading="(?:lazy|eager)"/.test(tag)
+      && /\bdecoding="async"/.test(tag)),
+    content: /<main id="main">[\s\S]{300,}<\/main>/i.test(html),
+  };
+  const failed = Object.entries(checks).filter(([, ok]) => !ok).map(([name]) => name);
+  if (failed.length) throw Error(`${route}: failed ${failed.join(", ")} (H1 count: ${h1})`);
+  titles.add(title);
+  descriptions.add(description);
+}
+
+if (titles.size !== routes.length) throw Error("Duplicate page titles detected");
+if (descriptions.size !== routes.length) throw Error("Duplicate meta descriptions detected");
+
+const home = await readFile(join("dist", "index.html"), "utf8");
+const homeDescriptions = [...home.matchAll(/<meta name="description" content="([^"]*)"/gi)];
+const homeTitles = [...home.matchAll(/<title>/gi)];
+const homeCanonicals = [...home.matchAll(/<link rel="canonical"/gi)];
+if (homeDescriptions.length !== 1 || homeDescriptions[0][1].length < 140 || homeDescriptions[0][1].length > 160) {
+  throw Error("Home description must appear once and be 140-160 characters");
+}
+if (homeTitles.length !== 1 || homeCanonicals.length !== 1) throw Error("Home must have one title and one canonical");
+if (!home.includes("Sociapi Society connects students across Pakistan through technology chapters, practical AI workshops, events, projects, and leadership opportunities.")) {
+  throw Error("Home description does not match the approved text");
+}
+
+const verify = await readFile(join("dist", "verify/index.html"), "utf8");
+if (!/<meta name="robots" content="noindex, follow">/i.test(verify)) throw Error("Certificate form must be noindex");
+const certificate = await readFile(join("dist", "verify/__certificate_id__/index.html"), "utf8");
+if (!/<meta name="robots" content="noindex, follow">/i.test(certificate)) {
+  throw Error("Certificate result is missing initial noindex");
+}
+if (!certificate.includes("Certificate ID") || !certificate.includes("Verify Certificate")) {
+  throw Error("Certificate result route did not render the verification form");
+}
+
+const xml = await readFile(join("dist", "sitemap.xml"), "utf8");
+const robots = await readFile(join("dist", "robots.txt"), "utf8");
+const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(([, url]) => url);
+const expectedUrls = routes.map((route) => `https://sociapis.vercel.app${route === "/" ? "/" : route}`);
+if (!robots.includes("Sitemap: https://sociapis.vercel.app/sitemap.xml")) {
+  throw Error("Robots.txt sitemap declaration is missing");
+}
+if (urls.length !== new Set(urls).size) throw Error("Sitemap contains duplicate URLs");
+const missingUrls = expectedUrls.filter((url) => !urls.includes(url));
+const extraUrls = urls.filter((url) => !expectedUrls.includes(url));
+if (missingUrls.length || extraUrls.length) {
+  throw Error(`Sitemap route mismatch. Missing: ${missingUrls.join(", ")}; extra: ${extraUrls.join(", ")}`);
+}
+if (urls.some((url) =>
+  url.includes("__certificate_id__")
+  || url.includes("/verify")
+  || url.includes("/labs")
+  || url === "https://sociapis.vercel.app/faq"
+  || url.includes("/faq/")
+  || url === "https://sociapis.vercel.app/partner"
+  || url.includes("/partner/"))) {
+  throw Error("Sitemap includes a private result or alias path");
+}
+
+const agent = await readFile(join("dist", "events/agentum-2026/index.html"), "utf8");
+const mehfil = await readFile(join("dist", "events/mehfil-ai-2026/index.html"), "utf8");
+const chapter = await readFile(join("dist", "chapters/uet-mardan/index.html"), "utf8");
+const faq = await readFile(join("dist", "faqs/index.html"), "utf8");
+for (const [event, name] of [[agent, "Agentum"], [mehfil, "Mehfil AI"]]) {
+  if ((event.match(/"@type":"Event"/g) || []).length !== 1 || !event.includes('"@type":"BreadcrumbList"')) {
+    throw Error(`${name}: expected one Event and a BreadcrumbList schema`);
+  }
+}
+if (!chapter.includes('"@type":"BreadcrumbList"')) throw Error("UET Mardan: missing breadcrumb schema");
+if (!faq.includes('"@type":"FAQPage"') || (faq.match(/"@type":"Question"/g) || []).length !== 9) {
+  throw Error("FAQs: expected matching visible FAQPage schema");
+}
+if (!home.includes('"@type":"Organization"') || !home.includes('"@type":"WebSite"')) {
+  throw Error("Home: missing Organization or WebSite schema");
+}
+if (!home.includes('"@type":"WebPage"')) throw Error("Home: missing WebPage schema");
+
+const activityList = home.match(/<ul class="activity-grid">([\s\S]*?)<\/ul>/i)?.[1];
+if (!activityList) throw Error("Home activities must render as a semantic list");
+if ((activityList.match(/<li\b/g) || []).length !== 5) throw Error("Home must render five activity list items");
+for (const activity of ["Campus chapters", "Events", "Workshops", "Projects", "Volunteer"]) {
+  if (!activityList.includes(activity)) throw Error(`Home activity list is missing ${activity}`);
+}
+if (!home.includes('id="community"') || !home.includes("Find your way in")) {
+  throw Error("Home must render its community activities section");
+}
+if (!home.includes('id="events"') || !home.includes("Events and activities")) {
+  throw Error("Home must render its events section");
+}
+if (!home.includes("One big community.") || !home.includes("Nine campus homes.")) {
+  throw Error("Home must render its campus network section");
+}
+if (!home.includes('aria-label="09"')) throw Error("Homepage counter value is not present in initial HTML");
+
+const responsivePictures = [...home.matchAll(/<picture\b[\s\S]*?<\/picture>/gi)].map(([picture]) => picture);
+if (responsivePictures.length === 0) throw Error("Homepage must render responsive picture elements");
+for (const picture of responsivePictures) {
+  const img = picture.match(/<img\b[^>]*>/i)?.[0] ?? "";
+  if (!picture.includes('type="image/avif"')
+    || !picture.includes('type="image/webp"')
+    || !/srcset=/i.test(picture)
+    || !/<img\b[^>]*\balt="[^"]*"/i.test(img)
+    || !/[\s]width="[1-9][0-9]*"/i.test(img)
+    || !/[\s]height="[1-9][0-9]*"/i.test(img)) {
+    throw Error("Responsive picture is missing a modern format, srcset, alt text, or intrinsic dimensions");
+  }
+}
+
+for (const [, json] of home.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)) {
+  JSON.parse(json);
+}

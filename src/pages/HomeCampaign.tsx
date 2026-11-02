@@ -368,16 +368,18 @@ export default function HomeCampaign() {
             <div><p className="section-label">Find your way in</p><h2>There’s more than<br /><span>one way to belong.</span></h2></div>
             <p className="section-lead">Curious, experienced, creative, or still figuring it out? There’s room to learn, help out, and make something with other students.</p>
           </div>
-          <div className="activity-grid">
+          <ul className="activity-grid">
             {activities.map((activity) => (
-              <Link to={activity.to} className="activity-card" key={activity.number}>
-                <span className="activity-number">{activity.number}</span>
-                <span className="activity-doodle"><ActivityDoodle name={activity.icon} /></span>
-                <div><h3>{activity.title}</h3><p>{activity.copy}</p></div>
-                <span className="activity-arrow" aria-hidden="true">↗</span>
-              </Link>
+              <li className="activity-card" key={activity.number}>
+                <Link to={activity.to} className="activity-card-link">
+                  <span className="activity-number">{activity.number}</span>
+                  <span className="activity-doodle"><ActivityDoodle name={activity.icon} /></span>
+                  <div><h3>{activity.title}</h3><p>{activity.copy}</p></div>
+                  <span className="activity-arrow" aria-hidden="true">↗</span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
           <p className="activity-note"><span>Start where you are.</span> We’ll figure out the rest together.</p>
         </div>
       </section>

@@ -46,4 +46,4 @@ for (const file of files) {
 const faq = await readFile(resolve(origin, "faqs/index.html"), "utf8");
 const faqSchema = [...faq.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)].map(([, json]) => JSON.parse(json)).find((schema) => schema["@type"] === "FAQPage");
 if (!faqSchema || faqSchema.mainEntity?.length !== 9) throw new Error("FAQ route must have its one FAQPage schema with nine visible questions");
-console.log(`Built asset audit passed: ${files.length} routes, ${jsonLdBlocks} valid JSON-LD blocks, ${localImages} local image variants, and all eight responsive picture sets resolve.`);
+console.log(`Built asset audit passed: ${files.length} routes, ${jsonLdBlocks} valid JSON-LD blocks, ${localImages} local image variants, and all responsive picture sets resolve.`);
