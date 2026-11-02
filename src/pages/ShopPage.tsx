@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container } from "../components/ui";
 import { products, type Product } from "../data/secondary";
+import { ResponsiveImage } from "../components/ResponsiveImage";
 
 const DARAZ_SHIRT_URL = "https://www.daraz.pk/products/oversized-baggy-t-shirt-for-men-and-women-unisex-casual-streetwear-tee-i1981174376-s14069074976.html?";
 const DARAZ_LAPTOP_SKIN_URL = "https://www.daraz.pk/products/i1981808757.html?spm=Seller_PK.24863640.table_online_product.1.1a2c2a97CIDRsh";
@@ -20,7 +21,7 @@ function ProductView({ product }: { product: Product }) {
     }
   }
   return <article className="shop-product">
-    <div className="product-image"><img src={product.image} alt={product.name} /><span>{product.badge}</span></div>
+    <div className="product-image"><ResponsiveImage src={product.image} alt={product.name} sizes="(max-width: 760px) 100vw, 40vw" decoding="async" /><span>{product.badge}</span></div>
     <div className="product-copy">
       <p>{product.category}</p><h2>{product.name}</h2><strong>Rs. {product.price.toLocaleString("en-US")}</strong><p>{product.description}</p>
       <ul>{product.features.map(feature => <li key={feature}>{feature}</li>)}</ul>

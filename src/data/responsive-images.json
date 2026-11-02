@@ -1,99 +1,107 @@
 {
-  "/Image/ss team.jpg": {
-    "width": 1440,
-    "height": 990,
+  "/Image/Event Image/Agentum Pic/0001.webp": {
+    "width": 1200,
+    "height": 1600,
     "formats": {
       "avif": [
         {
           "width": 480,
-          "src": "/optimized-images/ss-team-9e47ad48b6-480.avif"
+          "src": "/optimized-images/0001-0005018799-480.avif"
         },
         {
           "width": 960,
-          "src": "/optimized-images/ss-team-9e47ad48b6-960.avif"
+          "src": "/optimized-images/0001-0005018799-960.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/optimized-images/0001-0005018799-1200.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/0001-0005018799-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/0001-0005018799-960.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/optimized-images/0001-0005018799-1200.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Agentum Pic/6.webp": {
+    "width": 1200,
+    "height": 1600,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/6-ad07a29f81-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/6-ad07a29f81-960.avif"
+        },
+        {
+          "width": 1200,
+          "src": "/optimized-images/6-ad07a29f81-1200.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/6-ad07a29f81-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/6-ad07a29f81-960.webp"
+        },
+        {
+          "width": 1200,
+          "src": "/optimized-images/6-ad07a29f81-1200.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Agentum Pic/7.jpeg": {
+    "width": 3024,
+    "height": 4032,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/7-40b318e93c-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/7-40b318e93c-960.avif"
         },
         {
           "width": 1440,
-          "src": "/optimized-images/ss-team-9e47ad48b6-1440.avif"
+          "src": "/optimized-images/7-40b318e93c-1440.avif"
         }
       ],
       "webp": [
         {
           "width": 480,
-          "src": "/optimized-images/ss-team-9e47ad48b6-480.webp"
+          "src": "/optimized-images/7-40b318e93c-480.webp"
         },
         {
           "width": 960,
-          "src": "/optimized-images/ss-team-9e47ad48b6-960.webp"
+          "src": "/optimized-images/7-40b318e93c-960.webp"
         },
         {
           "width": 1440,
-          "src": "/optimized-images/ss-team-9e47ad48b6-1440.webp"
+          "src": "/optimized-images/7-40b318e93c-1440.webp"
         }
       ]
     }
   },
-  "/Image/Mehfil_AI.png": {
-    "width": 1080,
-    "height": 1350,
-    "formats": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/optimized-images/mehfil-ai-a3ef75605f-480.avif"
-        },
-        {
-          "width": 960,
-          "src": "/optimized-images/mehfil-ai-a3ef75605f-960.avif"
-        },
-        {
-          "width": 1080,
-          "src": "/optimized-images/mehfil-ai-a3ef75605f-1080.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/optimized-images/mehfil-ai-a3ef75605f-480.webp"
-        },
-        {
-          "width": 960,
-          "src": "/optimized-images/mehfil-ai-a3ef75605f-960.webp"
-        },
-        {
-          "width": 1080,
-          "src": "/optimized-images/mehfil-ai-a3ef75605f-1080.webp"
-        }
-      ]
-    }
-  },
-  "/Image/Agentum Pic/15.jfif": {
-    "width": 940,
-    "height": 788,
-    "formats": {
-      "avif": [
-        {
-          "width": 480,
-          "src": "/optimized-images/15-b1f264732a-480.avif"
-        },
-        {
-          "width": 940,
-          "src": "/optimized-images/15-b1f264732a-940.avif"
-        }
-      ],
-      "webp": [
-        {
-          "width": 480,
-          "src": "/optimized-images/15-b1f264732a-480.webp"
-        },
-        {
-          "width": 940,
-          "src": "/optimized-images/15-b1f264732a-940.webp"
-        }
-      ]
-    }
-  },
-  "/Image/Agentum Pic/12.png": {
+  "/Image/Event Image/Agentum Pic/12.png": {
     "width": 3024,
     "height": 4032,
     "formats": {
@@ -127,41 +135,441 @@
       ]
     }
   },
-  "/Image/Agentum Pic/14.png": {
+  "/Image/Event Image/Agentum Pic/14.png": {
+    "width": 3024,
+    "height": 3343,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/14-e2d210629d-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/14-e2d210629d-960.avif"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/14-e2d210629d-1440.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/14-e2d210629d-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/14-e2d210629d-960.webp"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/14-e2d210629d-1440.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Agentum Pic/15.jfif": {
+    "width": 940,
+    "height": 788,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/15-b1f264732a-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/15-b1f264732a-640.avif"
+        },
+        {
+          "width": 940,
+          "src": "/optimized-images/15-b1f264732a-940.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/15-b1f264732a-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/15-b1f264732a-640.webp"
+        },
+        {
+          "width": 940,
+          "src": "/optimized-images/15-b1f264732a-940.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Agentum Pic/Agentum blog.png": {
+    "width": 1046,
+    "height": 600,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/agentum-blog-8136c09bcd-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/agentum-blog-8136c09bcd-960.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/agentum-blog-8136c09bcd-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/agentum-blog-8136c09bcd-960.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Agentum Pic/IMG_5921.png": {
     "width": 3024,
     "height": 4032,
     "formats": {
       "avif": [
         {
           "width": 480,
-          "src": "/optimized-images/14-3f0ce0aee4-480.avif"
+          "src": "/optimized-images/img-5921-5075ea5289-480.avif"
         },
         {
           "width": 960,
-          "src": "/optimized-images/14-3f0ce0aee4-960.avif"
+          "src": "/optimized-images/img-5921-5075ea5289-960.avif"
         },
         {
           "width": 1440,
-          "src": "/optimized-images/14-3f0ce0aee4-1440.avif"
+          "src": "/optimized-images/img-5921-5075ea5289-1440.avif"
         }
       ],
       "webp": [
         {
           "width": 480,
-          "src": "/optimized-images/14-3f0ce0aee4-480.webp"
+          "src": "/optimized-images/img-5921-5075ea5289-480.webp"
         },
         {
           "width": 960,
-          "src": "/optimized-images/14-3f0ce0aee4-960.webp"
+          "src": "/optimized-images/img-5921-5075ea5289-960.webp"
         },
         {
           "width": 1440,
-          "src": "/optimized-images/14-3f0ce0aee4-1440.webp"
+          "src": "/optimized-images/img-5921-5075ea5289-1440.webp"
         }
       ]
     }
   },
-  "/Image/3.png": {
+  "/Image/Event Image/Agentum Pic/IMG_5956.png": {
+    "width": 3024,
+    "height": 4032,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/img-5956-62eef9bef4-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/img-5956-62eef9bef4-960.avif"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/img-5956-62eef9bef4-1440.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/img-5956-62eef9bef4-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/img-5956-62eef9bef4-960.webp"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/img-5956-62eef9bef4-1440.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Agentum Pic/IMG_5998.png": {
+    "width": 3024,
+    "height": 4032,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/img-5998-5c267a097d-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/img-5998-5c267a097d-960.avif"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/img-5998-5c267a097d-1440.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/img-5998-5c267a097d-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/img-5998-5c267a097d-960.webp"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/img-5998-5c267a097d-1440.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Agentum Pic/IMG_6010.png": {
+    "width": 3024,
+    "height": 4032,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/img-6010-143d161a0a-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/img-6010-143d161a0a-960.avif"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/img-6010-143d161a0a-1440.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/img-6010-143d161a0a-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/img-6010-143d161a0a-960.webp"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/img-6010-143d161a0a-1440.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Agentum Pic/Khyzar Hayat.png": {
+    "width": 1080,
+    "height": 1080,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/khyzar-hayat-a90f123567-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/khyzar-hayat-a90f123567-640.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/khyzar-hayat-a90f123567-960.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/khyzar-hayat-a90f123567-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/khyzar-hayat-a90f123567-640.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/khyzar-hayat-a90f123567-960.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Agentum Pic/mustafa.png": {
+    "width": 1080,
+    "height": 1080,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/mustafa-071d8ecfc6-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/mustafa-071d8ecfc6-640.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/mustafa-071d8ecfc6-960.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/mustafa-071d8ecfc6-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/mustafa-071d8ecfc6-640.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/mustafa-071d8ecfc6-960.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Agentum Pic/uzair.png": {
+    "width": 1080,
+    "height": 1080,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/uzair-f57b27145a-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/uzair-f57b27145a-640.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/uzair-f57b27145a-960.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/uzair-f57b27145a-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/uzair-f57b27145a-640.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/uzair-f57b27145a-960.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Mehfil AI/Mehfil_AI.png": {
+    "width": 1080,
+    "height": 1350,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/mehfil-ai-a3ef75605f-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/mehfil-ai-a3ef75605f-960.avif"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/mehfil-ai-a3ef75605f-1080.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/mehfil-ai-a3ef75605f-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/mehfil-ai-a3ef75605f-960.webp"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/mehfil-ai-a3ef75605f-1080.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Mehfil AI/1.png": {
+    "width": 1080,
+    "height": 1350,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/1-5aa225146d-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/1-5aa225146d-960.avif"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/1-5aa225146d-1080.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/1-5aa225146d-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/1-5aa225146d-960.webp"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/1-5aa225146d-1080.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Mehfil AI/2.webp": {
+    "width": 1080,
+    "height": 1350,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/2-d36dc02b27-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/2-d36dc02b27-960.avif"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/2-d36dc02b27-1080.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/2-d36dc02b27-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/2-d36dc02b27-960.webp"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/2-d36dc02b27-1080.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Mehfil AI/3.png": {
     "width": 1080,
     "height": 1350,
     "formats": {
@@ -195,36 +603,1472 @@
       ]
     }
   },
-  "/Image/Agentum Pic/IMG_5921.png": {
-    "width": 3024,
-    "height": 4032,
+  "/Image/Event Image/Mehfil AI/4.png": {
+    "width": 1080,
+    "height": 1350,
     "formats": {
       "avif": [
         {
           "width": 480,
-          "src": "/optimized-images/img-5921-5075ea5289-480.avif"
+          "src": "/optimized-images/4-16a45813f2-480.avif"
         },
         {
           "width": 960,
-          "src": "/optimized-images/img-5921-5075ea5289-960.avif"
+          "src": "/optimized-images/4-16a45813f2-960.avif"
         },
         {
-          "width": 1440,
-          "src": "/optimized-images/img-5921-5075ea5289-1440.avif"
+          "width": 1080,
+          "src": "/optimized-images/4-16a45813f2-1080.avif"
         }
       ],
       "webp": [
         {
           "width": 480,
-          "src": "/optimized-images/img-5921-5075ea5289-480.webp"
+          "src": "/optimized-images/4-16a45813f2-480.webp"
         },
         {
           "width": 960,
-          "src": "/optimized-images/img-5921-5075ea5289-960.webp"
+          "src": "/optimized-images/4-16a45813f2-960.webp"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/4-16a45813f2-1080.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Mehfil AI/5.png": {
+    "width": 1080,
+    "height": 1350,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/5-9ed577e7aa-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/5-9ed577e7aa-960.avif"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/5-9ed577e7aa-1080.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/5-9ed577e7aa-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/5-9ed577e7aa-960.webp"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/5-9ed577e7aa-1080.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Mehfil AI/6.png": {
+    "width": 1080,
+    "height": 1350,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/6-5e43b6480c-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/6-5e43b6480c-960.avif"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/6-5e43b6480c-1080.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/6-5e43b6480c-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/6-5e43b6480c-960.webp"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/6-5e43b6480c-1080.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Mehfil AI/7.png": {
+    "width": 1080,
+    "height": 1350,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/7-90759fc64d-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/7-90759fc64d-960.avif"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/7-90759fc64d-1080.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/7-90759fc64d-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/7-90759fc64d-960.webp"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/7-90759fc64d-1080.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Mehfil AI/8.png": {
+    "width": 1080,
+    "height": 1350,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/8-4af0cc9980-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/8-4af0cc9980-960.avif"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/8-4af0cc9980-1080.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/8-4af0cc9980-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/8-4af0cc9980-960.webp"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/8-4af0cc9980-1080.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Mehfil AI/9.webp": {
+    "width": 1080,
+    "height": 1350,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/9-e0cb5c7219-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/9-e0cb5c7219-960.avif"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/9-e0cb5c7219-1080.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/9-e0cb5c7219-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/9-e0cb5c7219-960.webp"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/9-e0cb5c7219-1080.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/Mehfil AI/10.webp": {
+    "width": 1080,
+    "height": 1350,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/10-893949818a-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/10-893949818a-960.avif"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/10-893949818a-1080.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/10-893949818a-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/10-893949818a-960.webp"
+        },
+        {
+          "width": 1080,
+          "src": "/optimized-images/10-893949818a-1080.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/BOOTCAMP/summer-bootcamp-2026-hero.png": {
+    "width": 1365,
+    "height": 768,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/summer-bootcamp-2026-hero-fbe1b83642-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/summer-bootcamp-2026-hero-fbe1b83642-960.avif"
+        },
+        {
+          "width": 1365,
+          "src": "/optimized-images/summer-bootcamp-2026-hero-fbe1b83642-1365.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/summer-bootcamp-2026-hero-fbe1b83642-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/summer-bootcamp-2026-hero-fbe1b83642-960.webp"
+        },
+        {
+          "width": 1365,
+          "src": "/optimized-images/summer-bootcamp-2026-hero-fbe1b83642-1365.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/AWS/aws-cloud-event-hero.png": {
+    "width": 1365,
+    "height": 768,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/aws-cloud-event-hero-154a1e2a91-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/aws-cloud-event-hero-154a1e2a91-960.avif"
+        },
+        {
+          "width": 1365,
+          "src": "/optimized-images/aws-cloud-event-hero-154a1e2a91-1365.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/aws-cloud-event-hero-154a1e2a91-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/aws-cloud-event-hero-154a1e2a91-960.webp"
+        },
+        {
+          "width": 1365,
+          "src": "/optimized-images/aws-cloud-event-hero-154a1e2a91-1365.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Event Image/AWS/aws-cloud-webinar-promo.png": {
+    "width": 1494,
+    "height": 478,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/aws-cloud-webinar-promo-39c6f943b7-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/aws-cloud-webinar-promo-39c6f943b7-960.avif"
         },
         {
           "width": 1440,
-          "src": "/optimized-images/img-5921-5075ea5289-1440.webp"
+          "src": "/optimized-images/aws-cloud-webinar-promo-39c6f943b7-1440.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/aws-cloud-webinar-promo-39c6f943b7-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/aws-cloud-webinar-promo-39c6f943b7-960.webp"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/aws-cloud-webinar-promo-39c6f943b7-1440.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Zuhair.jpeg": {
+    "width": 1154,
+    "height": 1363,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/zuhair-c7ea67fe7c-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/zuhair-c7ea67fe7c-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/zuhair-c7ea67fe7c-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/zuhair-c7ea67fe7c-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Muhammad Mudassir.jpg": {
+    "width": 720,
+    "height": 967,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/muhammad-mudassir-bea9b058f2-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/muhammad-mudassir-bea9b058f2-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/muhammad-mudassir-bea9b058f2-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/muhammad-mudassir-bea9b058f2-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Asiya Islam.png": {
+    "width": 1086,
+    "height": 1448,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/asiya-islam-ae8fe958d9-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/asiya-islam-ae8fe958d9-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/asiya-islam-ae8fe958d9-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/asiya-islam-ae8fe958d9-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Bilal Muhammad.jpg": {
+    "width": 1280,
+    "height": 1280,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/bilal-muhammad-344dcf24df-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/bilal-muhammad-344dcf24df-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/bilal-muhammad-344dcf24df-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/bilal-muhammad-344dcf24df-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Manahil Hashmat.jpeg": {
+    "width": 577,
+    "height": 1280,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/manahil-hashmat-b458ab9c6c-320.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/manahil-hashmat-b458ab9c6c-320.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Muhammad Zulkifal (Event Manger).jpg": {
+    "width": 920,
+    "height": 1172,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/muhammad-zulkifal-event-manger--e41ee96804-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/muhammad-zulkifal-event-manger--e41ee96804-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/muhammad-zulkifal-event-manger--e41ee96804-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/muhammad-zulkifal-event-manger--e41ee96804-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Aqsa sajid.jfif": {
+    "width": 720,
+    "height": 983,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/aqsa-sajid-0dc0f5b621-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/aqsa-sajid-0dc0f5b621-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/aqsa-sajid-0dc0f5b621-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/aqsa-sajid-0dc0f5b621-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/HANIYA MUMTAZ.JPG": {
+    "width": 874,
+    "height": 1089,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/haniya-mumtaz-b4b9c0f29d-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/haniya-mumtaz-b4b9c0f29d-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/haniya-mumtaz-b4b9c0f29d-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/haniya-mumtaz-b4b9c0f29d-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Danyal y.jpg": {
+    "width": 739,
+    "height": 976,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/danyal-y-a8c4d285f9-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/danyal-y-a8c4d285f9-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/danyal-y-a8c4d285f9-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/danyal-y-a8c4d285f9-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Umair Ahmad.png": {
+    "width": 1092,
+    "height": 1440,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/umair-ahmad-3d5832915b-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/umair-ahmad-3d5832915b-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/umair-ahmad-3d5832915b-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/umair-ahmad-3d5832915b-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/irfan.jfif": {
+    "width": 896,
+    "height": 1195,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/irfan-55ffabe1d2-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/irfan-55ffabe1d2-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/irfan-55ffabe1d2-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/irfan-55ffabe1d2-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/hamid ali khan.jfif": {
+    "width": 1086,
+    "height": 1448,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/hamid-ali-khan-a3eb2b4c56-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/hamid-ali-khan-a3eb2b4c56-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/hamid-ali-khan-a3eb2b4c56-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/hamid-ali-khan-a3eb2b4c56-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Ukasha Umar.webp": {
+    "width": 1440,
+    "height": 1916,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/ukasha-umar-5ce987c0b3-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/ukasha-umar-5ce987c0b3-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/ukasha-umar-5ce987c0b3-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/ukasha-umar-5ce987c0b3-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Sajid_Wazir.png": {
+    "width": 1024,
+    "height": 1536,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/sajid-wazir-878d30c00f-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/sajid-wazir-878d30c00f-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/sajid-wazir-878d30c00f-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/sajid-wazir-878d30c00f-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Umair Afridi.jfif": {
+    "width": 1200,
+    "height": 1600,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/umair-afridi-2004db0d79-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/umair-afridi-2004db0d79-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/umair-afridi-2004db0d79-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/umair-afridi-2004db0d79-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Iftikhar Ullah.jpeg": {
+    "width": 1254,
+    "height": 1254,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/iftikhar-ullah-2cffe80cf5-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/iftikhar-ullah-2cffe80cf5-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/iftikhar-ullah-2cffe80cf5-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/iftikhar-ullah-2cffe80cf5-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Rahat Marwat.png": {
+    "width": 843,
+    "height": 1019,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/rahat-marwat-048ee9f5da-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/rahat-marwat-048ee9f5da-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/rahat-marwat-048ee9f5da-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/rahat-marwat-048ee9f5da-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Hunsa Iqbal.png": {
+    "width": 1122,
+    "height": 1402,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/hunsa-iqbal-31e2305674-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/hunsa-iqbal-31e2305674-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/hunsa-iqbal-31e2305674-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/hunsa-iqbal-31e2305674-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Faisal Khan.png": {
+    "width": 1080,
+    "height": 1386,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/faisal-khan-fd4de66058-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/faisal-khan-fd4de66058-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/faisal-khan-fd4de66058-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/faisal-khan-fd4de66058-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Muhammad Saad.png": {
+    "width": 1254,
+    "height": 1254,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/muhammad-saad-337dc19684-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/muhammad-saad-337dc19684-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/muhammad-saad-337dc19684-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/muhammad-saad-337dc19684-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Alina khan.JPG": {
+    "width": 2826,
+    "height": 3456,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/alina-khan-1e3c8aec1d-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/alina-khan-1e3c8aec1d-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/alina-khan-1e3c8aec1d-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/alina-khan-1e3c8aec1d-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/maimoona.jpg": {
+    "width": 1440,
+    "height": 2560,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/maimoona-279c42bc3c-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/maimoona-279c42bc3c-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/maimoona-279c42bc3c-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/maimoona-279c42bc3c-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Noman Zeb.jpg": {
+    "width": 2172,
+    "height": 2896,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/noman-zeb-52621d05f8-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/noman-zeb-52621d05f8-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/noman-zeb-52621d05f8-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/noman-zeb-52621d05f8-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/zakir.png": {
+    "width": 500,
+    "height": 500,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/zakir-1156f7082f-320.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/zakir-1156f7082f-320.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Jahanzaib Aftidi.jpeg": {
+    "width": 1440,
+    "height": 1918,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/jahanzaib-aftidi-87a8f78f24-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/jahanzaib-aftidi-87a8f78f24-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/jahanzaib-aftidi-87a8f78f24-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/jahanzaib-aftidi-87a8f78f24-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Mudassir Ali.png": {
+    "width": 768,
+    "height": 1364,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/mudassir-ali-94b56159dd-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/mudassir-ali-94b56159dd-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/mudassir-ali-94b56159dd-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/mudassir-ali-94b56159dd-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Navved.png": {
+    "width": 1080,
+    "height": 1080,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/navved-c5de8e3605-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/navved-c5de8e3605-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/navved-c5de8e3605-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/navved-c5de8e3605-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Tamkeen Israr (past).jpg": {
+    "width": 1024,
+    "height": 709,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/tamkeen-israr-past--dc9800712c-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/tamkeen-israr-past--dc9800712c-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/tamkeen-israr-past--dc9800712c-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/tamkeen-israr-past--dc9800712c-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Atika Aqlim (past).jpg": {
+    "width": 1124,
+    "height": 1600,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/atika-aqlim-past--91cf0d94b6-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/atika-aqlim-past--91cf0d94b6-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/atika-aqlim-past--91cf0d94b6-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/atika-aqlim-past--91cf0d94b6-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/saad (past).jpeg": {
+    "width": 747,
+    "height": 1024,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/saad-past--4f466877c7-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/saad-past--4f466877c7-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/saad-past--4f466877c7-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/saad-past--4f466877c7-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Muhammad Zakria (past).jpg": {
+    "width": 3024,
+    "height": 4032,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/muhammad-zakria-past--031235089c-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/muhammad-zakria-past--031235089c-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/muhammad-zakria-past--031235089c-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/muhammad-zakria-past--031235089c-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Hamad Khan (past).jpg": {
+    "width": 2234,
+    "height": 2923,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/hamad-khan-past--e3a0daf757-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/hamad-khan-past--e3a0daf757-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/hamad-khan-past--e3a0daf757-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/hamad-khan-past--e3a0daf757-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Maham Iqbal (past).png": {
+    "width": 1434,
+    "height": 1796,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/maham-iqbal-past--3202918088-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/maham-iqbal-past--3202918088-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/maham-iqbal-past--3202918088-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/maham-iqbal-past--3202918088-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Hamza Khan (past).jpg": {
+    "width": 960,
+    "height": 1088,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/hamza-khan-past--43cbd24196-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/hamza-khan-past--43cbd24196-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/hamza-khan-past--43cbd24196-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/hamza-khan-past--43cbd24196-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Muhammad Abdullah (past).jpg": {
+    "width": 1382,
+    "height": 1382,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/muhammad-abdullah-past--269fbc5ead-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/muhammad-abdullah-past--269fbc5ead-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/muhammad-abdullah-past--269fbc5ead-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/muhammad-abdullah-past--269fbc5ead-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Riyan Ahmad (past).png": {
+    "width": 800,
+    "height": 800,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/riyan-ahmad-past--863df4d3c4-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/riyan-ahmad-past--863df4d3c4-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/riyan-ahmad-past--863df4d3c4-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/riyan-ahmad-past--863df4d3c4-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Areesh Tahir (past).png": {
+    "width": 1254,
+    "height": 1254,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/areesh-tahir-past--fc3b2d957a-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/areesh-tahir-past--fc3b2d957a-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/areesh-tahir-past--fc3b2d957a-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/areesh-tahir-past--fc3b2d957a-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Team Pic/Shandana Qadir (past).jfif": {
+    "width": 832,
+    "height": 1084,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/shandana-qadir-past--74bece2125-320.avif"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/shandana-qadir-past--74bece2125-640.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/shandana-qadir-past--74bece2125-320.webp"
+        },
+        {
+          "width": 640,
+          "src": "/optimized-images/shandana-qadir-past--74bece2125-640.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Shop Image/OVERSIZED.png": {
+    "width": 866,
+    "height": 1024,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/oversized-fd4949a2db-480.avif"
+        },
+        {
+          "width": 866,
+          "src": "/optimized-images/oversized-fd4949a2db-866.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/oversized-fd4949a2db-480.webp"
+        },
+        {
+          "width": 866,
+          "src": "/optimized-images/oversized-fd4949a2db-866.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Shop Image/OVERSIZED Female.png": {
+    "width": 862,
+    "height": 1011,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/oversized-female-9455ab0c32-480.avif"
+        },
+        {
+          "width": 862,
+          "src": "/optimized-images/oversized-female-9455ab0c32-862.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/oversized-female-9455ab0c32-480.webp"
+        },
+        {
+          "width": 862,
+          "src": "/optimized-images/oversized-female-9455ab0c32-862.webp"
+        }
+      ]
+    }
+  },
+  "/Image/Shop Image/laptop back skin.png": {
+    "width": 1448,
+    "height": 1086,
+    "formats": {
+      "avif": [
+        {
+          "width": 480,
+          "src": "/optimized-images/laptop-back-skin-d119f827c7-480.avif"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/laptop-back-skin-d119f827c7-960.avif"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/laptop-back-skin-d119f827c7-1440.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 480,
+          "src": "/optimized-images/laptop-back-skin-d119f827c7-480.webp"
+        },
+        {
+          "width": 960,
+          "src": "/optimized-images/laptop-back-skin-d119f827c7-960.webp"
+        },
+        {
+          "width": 1440,
+          "src": "/optimized-images/laptop-back-skin-d119f827c7-1440.webp"
+        }
+      ]
+    }
+  },
+  "/Our Partner/images.jpg": {
+    "width": 225,
+    "height": 225,
+    "formats": {
+      "avif": [
+        {
+          "width": 180,
+          "src": "/optimized-images/images-dd1bdac73d-180.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 180,
+          "src": "/optimized-images/images-dd1bdac73d-180.webp"
+        }
+      ]
+    }
+  },
+  "/Our Partner/pathway.png": {
+    "width": 225,
+    "height": 225,
+    "formats": {
+      "avif": [
+        {
+          "width": 180,
+          "src": "/optimized-images/pathway-d40c784c0e-180.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 180,
+          "src": "/optimized-images/pathway-d40c784c0e-180.webp"
+        }
+      ]
+    }
+  },
+  "/Our Partner/Community Partner/SoftwareSynergyClub - Muhammad Haris.jpg": {
+    "width": 1080,
+    "height": 868,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/softwaresynergyclub-muhammad-haris-1d0292f1db-320.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/softwaresynergyclub-muhammad-haris-1d0292f1db-320.webp"
+        }
+      ]
+    }
+  },
+  "/Our Partner/Community Partner/IMG-20251229-WA0000 - TechLink Solutions LLC.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "formats": {
+      "avif": [
+        {
+          "width": 320,
+          "src": "/optimized-images/img-20251229-wa0000-techlink-solutions-llc-9615277e18-320.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 320,
+          "src": "/optimized-images/img-20251229-wa0000-techlink-solutions-llc-9615277e18-320.webp"
         }
       ]
     }

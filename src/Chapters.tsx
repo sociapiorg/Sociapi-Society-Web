@@ -24,7 +24,7 @@ const IMG = {
   uol: "UET LAHORE.jpg",
   CUSIT: "CUSIT.jpeg",
   BZU: "BZU.jpg",
-  community: "Image/ss team.jpg",
+  community: "Image/Event Image/Agentum Pic/IMG_5921.png",
   night: "community.jfif",
 };
 
@@ -189,7 +189,7 @@ const DEPTS = [
   { name: "Design Team", color: "#c9a0f5" },
   { name: "Tech Team", color: "#f09070" },
   { name: "Women Wing", color: "#f08bb4" },
-  { name: "Volunteers", color: "#f2c46b" },
+  { name: "Volunteers", color: "#7bd355" },
 ];
 
 const STEPS = [

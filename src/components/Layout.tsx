@@ -4,8 +4,8 @@ import { links } from "../data/site";
 import { Button, Container } from "./ui";
 import { Seo } from "./Seo";
 
-const primary = [["Home", "/"], ["About", "/about"], ["Chapters", "/chapters"], ["Events", "/events"], ["Opportunities", "/opportunities"], ["Contact Us", "/contact"]];
-const more = [["Our Team", "/team"], ["Services", "/services"], ["Partner With Us", "/partner-with-us"], ["Gallery", "/gallery"], ["Reviews", "/reviews"], ["FAQs", "/faqs"], ["Shop", "/shop"], ["Verify Certificate", "/verify"]];
+const primary = [["Home", "/"], ["About", "/about"], ["Chapters", "/chapters"], ["Events", "/events"], ["Team", "/team"], ["Contact", "/contact"]];
+const more = [["Opportunities", "/opportunities"], ["Services", "/services"], ["Partner With Us", "/partner-with-us"], ["Gallery", "/gallery"], ["Reviews", "/reviews"], ["FAQs", "/faqs"], ["Shop", "/shop"], ["Verify Certificate", "/verify"]];
 
 export function Layout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);

@@ -1,0 +1,18 @@
+/* Hallmark · tokens · Wayfind structure with Furrow Red Hat type · v2.0.0 */
+/* Hallmark · critique: P4 H5 E4 S5 R5 V5 · weakest: E, legacy selectors are contained by homepage-scoped tokens and rules */
+body:has(main .campaign) {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 112px; --section-gap: 144px; --section-gap-l: 176px;
+  --color-paper: #f3f5f4; --color-paper-2: var(--soft); --color-paper-3: #f8faf9;
+  --color-ink: var(--ink); --color-ink-2: #3e4642; --color-muted: var(--muted);
+  --color-rule: #c4ceca; --color-ink-rule: #69766d;
+  --color-accent: var(--green); --color-accent-2: var(--lime); --color-accent-ink: #f8faf9; --color-focus: var(--green);
+  --color-brand-deep: #355b31;
+  --font-display: "Red Hat Display", var(--display); --font-body: "Red Hat Text", var(--body);
+  --radius-card: 0; --radius-pill: 999px; --rule-hair: 1px; --rule-bar: 2px;
+  --display-weight: 600;
+}

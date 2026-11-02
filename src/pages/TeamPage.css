@@ -1,0 +1,931 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap");
+
+.team-page {
+  --team-paper: #f7f6f0;
+  --team-ink: #292d29;
+  --team-green: #315f3b;
+  --team-lime: #b7e88b;
+  --team-rule: #c9cfc5;
+  overflow: clip;
+  background: var(--team-paper);
+  color: var(--team-ink);
+}
+
+.team-page,
+.team-page * {
+  box-sizing: border-box;
+}
+
+.team-page .team-hero {
+  position: relative;
+  padding: clamp(42px, 7vw, 88px) 0 56px;
+  background-color: var(--team-paper);
+  background-image: linear-gradient(rgba(49, 95, 59, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(49, 95, 59, .035) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.team-page .team-hero > .container {
+  position: relative;
+  display: grid;
+  min-height: min(590px, calc(100svh - 110px));
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(28px, 5vw, 72px);
+}
+
+.team-page .team-hero-copy {
+  position: relative;
+  z-index: 2;
+  padding: 18px 0 30px;
+}
+
+.team-page .team-hand-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  color: var(--team-green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.team-page .team-hand-label span {
+  color: var(--team-green);
+  font-size: 21px;
+}
+
+.team-page .team-hero h1 {
+  max-width: 700px;
+  margin: 25px 0 20px;
+  font: 800 clamp(3.2rem, 7.3vw, 6.7rem)/.87 var(--display);
+  letter-spacing: -.085em;
+  text-wrap: balance;
+}
+
+.team-page .team-hero h1 em {
+  color: var(--team-green);
+  font-family: "Caveat", cursive;
+  font-size: 1.18em;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -.055em;
+  text-decoration: underline wavy var(--team-green) 2px;
+  text-underline-offset: .08em;
+}
+
+.team-page .team-hero-copy > p:not(.team-hand-label) {
+  max-width: 470px;
+  margin: 0;
+  color: #515a52;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.team-page .team-hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 26px;
+  padding: 9px 16px;
+  border: 1px solid var(--team-green);
+  border-radius: 999px;
+  background: var(--team-lime);
+  color: #1d2b1f;
+  font-size: 12px;
+  font-weight: 800;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.team-page .team-hero-link:hover {
+  box-shadow: 3px 4px 0 var(--team-green);
+  transform: translate(-2px, -2px);
+}
+
+.team-page .team-hero-art {
+  position: relative;
+  display: grid;
+  min-height: 460px;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid var(--team-green);
+  border-radius: 49% 51% 47% 53% / 46% 43% 57% 54%;
+  background: #e7ebdf;
+  box-shadow: 5px 7px 0 var(--team-green);
+  transform: rotate(1.5deg);
+}
+
+.team-page .team-hero-art::before,
+.team-page .team-hero-art::after {
+  position: absolute;
+  border: 1px dashed rgba(49, 95, 59, .35);
+  border-radius: 50%;
+  content: "";
+}
+
+.team-page .team-hero-art::before {
+  inset: 9% 12%;
+  transform: rotate(-17deg);
+}
+
+.team-page .team-hero-art::after {
+  inset: 17% 5%;
+  transform: rotate(13deg);
+}
+
+.team-page .team-doodle-people {
+  position: relative;
+  z-index: 1;
+  width: min(88%, 420px);
+  transform: rotate(-1.5deg);
+}
+
+.team-page .team-doodle-people svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  stroke: var(--team-green);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.team-page .team-hero-sun {
+  position: absolute;
+  top: 8%;
+  right: 12%;
+  color: var(--team-green);
+  font-size: clamp(40px, 7vw, 72px);
+  animation: team-sun-turn 24s linear infinite;
+}
+
+.team-page .team-hero-note {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  padding: 9px 14px;
+  border: 1.5px solid var(--team-green);
+  background: #fffef9;
+  box-shadow: 3px 4px 0 rgba(49, 95, 59, .2);
+  color: var(--team-ink);
+  font: 700 clamp(17px, 2vw, 23px)/.95 "Caveat", cursive;
+  text-align: center;
+}
+
+.team-page .team-hero-note--one {
+  top: 21%;
+  left: 3%;
+  transform: rotate(-9deg);
+}
+
+.team-page .team-hero-note--two {
+  right: 0;
+  bottom: 17%;
+  transform: rotate(5deg);
+}
+
+.team-page .team-hero-caption {
+  position: absolute;
+  bottom: 7%;
+  left: 11%;
+  z-index: 2;
+  color: var(--team-green);
+  font: 700 clamp(17px, 2vw, 22px)/1 "Caveat", cursive;
+  transform: rotate(-4deg);
+}
+
+.team-page .team-hero-index {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #687368;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.team-page .team-editorial {
+  padding: 54px 0 110px;
+  background: var(--team-paper);
+}
+
+.team-page .team-context {
+  display: grid;
+  grid-template-columns: 1fr 130px 1.2fr;
+  align-items: center;
+  gap: 28px;
+  padding: 22px 0 30px;
+  border-block: 1px dashed var(--team-rule);
+}
+
+.team-page .team-context > p,
+.team-page .team-section-head > span,
+.team-page .advisor-roster header > span,
+.team-page .chapter-team-note > p,
+.team-page .contributors-archive summary > span {
+  margin: 0;
+  color: var(--team-green);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.team-page .team-context > strong {
+  color: var(--team-green);
+  font: 700 76px/.8 "Caveat", cursive;
+  text-align: center;
+  transform: rotate(-6deg);
+}
+
+.team-page .team-context > span {
+  max-width: 510px;
+  color: #515a52;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.team-page .team-section-head {
+  display: grid;
+  grid-template-columns: .55fr 1fr 1fr;
+  align-items: end;
+  gap: 28px;
+  margin: 76px 0 29px;
+  scroll-margin-top: 110px;
+}
+
+.team-page .team-section-head h2,
+.team-page .advisor-roster header h2 {
+  margin: 0;
+  color: var(--team-ink);
+  font: 600 clamp(2.5rem, 5vw, 4.8rem)/.93 var(--body);
+  letter-spacing: -.07em;
+}
+
+.team-page .team-section-head > p {
+  max-width: 370px;
+  margin: 0;
+  color: #586159;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.team-page .leadership-roster {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.team-page .leadership-roster article {
+  min-width: 0;
+  padding: 12px 12px 20px;
+  border: 1px solid #d5d9d0;
+  background: #fffefa;
+  box-shadow: 2px 4px 0 rgba(49, 95, 59, .12);
+  transform: rotate(-1deg);
+}
+
+.team-page .leadership-roster article:nth-child(3n+2) {
+  transform: rotate(1.3deg) translateY(12px);
+}
+
+.team-page .leadership-roster article:nth-child(3n) {
+  transform: rotate(-.5deg) translateY(-4px);
+}
+
+.team-page .team-portrait {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/4.5;
+  overflow: hidden;
+  background: #e4e9e1;
+}
+
+.team-page .team-portrait::after {
+  position: absolute;
+  inset: 7px;
+  border: 1px dashed rgba(255, 255, 255, .8);
+  content: "";
+  pointer-events: none;
+}
+
+.team-page .team-portrait img,
+.team-page .roster-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  filter: saturate(.83);
+  transition: transform .35s ease;
+}
+
+.team-page .leadership-roster article:hover .team-portrait img,
+.team-page .department-roster article:hover .roster-portrait img {
+  transform: scale(1.035);
+}
+
+.team-page .leadership-roster article > div:last-child > span,
+.team-page .advisor-roster article > div:last-child > span {
+  display: block;
+  margin-top: 17px;
+  color: var(--team-green);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.team-page .leadership-roster article > div:last-child > span i {
+  margin-left: 5px;
+  color: #81a25c;
+  font-size: 13px;
+  font-style: normal;
+}
+
+.team-page .leadership-roster h2 {
+  margin: 5px 0 0;
+  color: var(--team-ink);
+  font: 600 clamp(1.45rem, 2.4vw, 2.3rem)/1.02 var(--body);
+  letter-spacing: -.05em;
+}
+
+.team-page .advisor-roster {
+  display: grid;
+  grid-template-columns: .85fr 1.5fr;
+  align-items: center;
+  gap: 48px;
+  margin: 105px 0 95px;
+  padding: 38px;
+  border: 1.5px dashed var(--team-green);
+  border-radius: 15px 6px 13px 8px;
+  background: #e9eee4;
+  transform: rotate(-.35deg);
+}
+
+.team-page .advisor-roster header {
+  display: grid;
+  gap: 18px;
+}
+
+.team-page .advisor-roster header h2 {
+  max-width: 390px;
+  font-family: "Caveat", cursive;
+  font-size: clamp(2.5rem, 4.2vw, 4.2rem);
+  letter-spacing: -.04em;
+}
+
+.team-page .advisor-roster article {
+  display: grid;
+  grid-template-columns: 185px 1fr;
+  align-items: center;
+  gap: 28px;
+}
+
+.team-page .advisor-roster .team-portrait {
+  width: 185px;
+  border: 7px solid #fffefa;
+  box-shadow: 2px 4px 0 rgba(49, 95, 59, .18);
+  transform: rotate(2deg);
+}
+
+.team-page .advisor-roster h3 {
+  margin: 8px 0;
+  font: 600 clamp(1.7rem, 3vw, 3rem)/1 var(--body);
+  letter-spacing: -.055em;
+}
+
+.team-page .department-section {
+  margin-top: 78px;
+}
+
+.team-page .department-section .team-section-head {
+  grid-template-columns: .55fr 1fr 1fr;
+}
+
+.team-page .department-section .team-section-head h2 {
+  font-family: "Caveat", cursive;
+  font-size: clamp(3rem, 5.2vw, 5rem);
+  letter-spacing: -.035em;
+}
+
+.team-page .department-roster {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.team-page .department-roster article {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  min-height: 112px;
+  padding: 17px 18px;
+  border: 1px dashed #cbd4c8;
+  border-radius: 12px 7px 11px 8px;
+  background: #fffefa;
+  box-shadow: 2px 3px 0 rgba(49, 95, 59, .1);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.team-page .department-roster article:hover {
+  border-color: var(--team-green);
+  box-shadow: 3px 5px 0 rgba(49, 95, 59, .16);
+  transform: translateY(-3px) rotate(-.5deg);
+}
+
+.team-page .department-roster article > span:first-child {
+  position: absolute;
+  top: 8px;
+  right: 11px;
+  color: var(--team-green);
+  font: 700 17px/1 "Caveat", cursive;
+}
+
+.team-page .roster-portrait {
+  width: 64px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 3px solid #f1f3eb;
+  border-radius: 13px 8px 12px 7px;
+  background: #e4e9e1;
+  box-shadow: 1px 2px 0 #c6d0c3;
+  transform: rotate(-2deg);
+}
+
+.team-page .roster-portrait img {
+  object-position: center 20%;
+}
+
+.team-page .roster-portrait--aqsa img {
+  object-position: center top;
+}
+
+.team-page .roster-initials {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  background: #e7ebdf;
+  color: var(--team-green);
+  font: 700 20px/1 "Caveat", cursive;
+}
+
+.team-page .department-roster h3 {
+  margin: 0;
+  font: 600 clamp(1.1rem, 1.8vw, 1.5rem)/1.1 var(--body);
+  letter-spacing: -.035em;
+}
+
+.team-page .department-roster article > div:last-of-type > p {
+  margin: 5px 0 0;
+  color: #667067;
+  font: 600 17px/1 "Caveat", cursive;
+}
+
+.team-page .team-roster-doodle {
+  position: absolute;
+  right: 13px;
+  bottom: 9px;
+  color: #95b373;
+  font-size: 14px;
+  opacity: .7;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.team-page .department-roster article:hover .team-roster-doodle {
+  color: var(--team-green);
+  transform: rotate(35deg) scale(1.15);
+}
+
+.team-page .chapter-team-note {
+  position: relative;
+  display: grid;
+  grid-template-columns: .65fr 1.35fr;
+  align-items: end;
+  gap: 20px 34px;
+  margin: 90px 0;
+  padding: 32px;
+  border: 1px dashed #d1d8ce;
+  background: #fffefa;
+  box-shadow: 3px 4px 0 rgba(49, 95, 59, .12);
+  transform: rotate(.5deg);
+}
+
+.team-page .chapter-team-note h2 {
+  max-width: 650px;
+  margin: 0;
+  font: 600 clamp(2rem, 4vw, 3.8rem)/.98 "Caveat", cursive;
+}
+
+.team-page .chapter-team-note a {
+  grid-column: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  color: var(--team-green);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.team-page .contributors-archive {
+  border-block: 1px dashed var(--team-green);
+}
+
+.team-page .contributors-archive summary {
+  display: grid;
+  grid-template-columns: 1fr 70px auto;
+  align-items: center;
+  gap: 20px;
+  padding: 21px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.team-page .contributors-archive summary::-webkit-details-marker {
+  display: none;
+}
+
+.team-page .contributors-archive summary > strong {
+  color: var(--team-green);
+  font: 700 35px/1 "Caveat", cursive;
+}
+
+.team-page .contributors-archive summary > b {
+  font: 700 18px/1 "Caveat", cursive;
+}
+
+.team-page .contributors-archive summary > b i {
+  margin-left: 5px;
+  color: var(--team-green);
+  font-style: normal;
+}
+
+.team-page .contributors-archive[open] summary > b i {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+.team-page .contributors-archive > div {
+  padding: 22px 0 32px;
+  border-top: 1px dashed var(--team-rule);
+}
+
+.team-page .contributors-archive > div > p {
+  color: #586159;
+}
+
+.team-page .contributors-archive > div > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 24px;
+  margin-top: 20px;
+}
+
+.team-page .contributors-archive article {
+  display: flex;
+  min-height: 76px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px 10px 12px 0;
+  border-top: 1px dashed var(--team-rule);
+}
+
+.team-page .contributors-archive article img {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 7px;
+  border: 2px solid white;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-page .contributors-archive article strong {
+  font-size: 13px;
+}
+
+.team-page .contributors-archive article > span {
+  color: #687368;
+  font: 500 15px/1.1 "Caveat", cursive;
+}
+
+.team-page a:focus-visible,
+.team-page summary:focus-visible {
+  outline: 3px solid var(--team-green);
+  outline-offset: 4px;
+}
+
+@keyframes team-sun-turn {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 900px) {
+  .team-page .team-hero > .container {
+    min-height: 500px;
+    gap: 25px;
+  }
+
+  .team-page .team-hero-art {
+    min-height: 390px;
+  }
+
+  .team-page .team-context {
+    grid-template-columns: 1fr 100px 1.4fr;
+    gap: 20px;
+  }
+
+  .team-page .team-section-head,
+  .team-page .department-section .team-section-head {
+    grid-template-columns: .65fr 1fr;
+    gap: 15px 24px;
+  }
+
+  .team-page .team-section-head > p {
+    grid-column: 2;
+  }
+
+  .team-page .leadership-roster {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .team-page .advisor-roster {
+    grid-template-columns: .8fr 1.2fr;
+    gap: 25px;
+    padding: 27px;
+  }
+
+  .team-page .advisor-roster article {
+    grid-template-columns: 145px 1fr;
+    gap: 20px;
+  }
+
+  .team-page .advisor-roster .team-portrait {
+    width: 145px;
+  }
+
+  .team-page .department-roster {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .team-page .department-roster article {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px 14px;
+  }
+}
+
+@media (max-width: 650px) {
+  .team-page .team-hero {
+    padding: 38px 0 50px;
+  }
+
+  .team-page .team-hero > .container {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team-page .team-hero-copy {
+    padding: 10px 0 0;
+  }
+
+  .team-page .team-hero h1 {
+    margin: 20px 0 15px;
+    font-size: clamp(3.05rem, 14vw, 5rem);
+  }
+
+  .team-page .team-hero-copy > p:not(.team-hand-label) {
+    max-width: 42ch;
+    font-size: 15px;
+  }
+
+  .team-page .team-hero-link {
+    margin-top: 19px;
+  }
+
+  .team-page .team-hero-art {
+    width: calc(100% - 10px);
+    min-height: 280px;
+    margin: 2px auto 10px;
+  }
+
+  .team-page .team-hero-note--one {
+    top: 16%;
+    left: 2%;
+  }
+
+  .team-page .team-hero-note--two {
+    right: 1%;
+    bottom: 14%;
+  }
+
+  .team-page .team-hero-caption {
+    bottom: 6%;
+    left: 8%;
+    font-size: 17px;
+  }
+
+  .team-page .team-hero-index {
+    right: 0;
+    bottom: -29px;
+    font-size: 7px;
+  }
+
+  .team-page .team-editorial {
+    padding: 38px 0 72px;
+  }
+
+  .team-page .team-context {
+    grid-template-columns: 1fr auto;
+    gap: 8px 15px;
+    padding: 18px 0 20px;
+  }
+
+  .team-page .team-context > p {
+    grid-column: 1;
+  }
+
+  .team-page .team-context > strong {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    font-size: 64px;
+  }
+
+  .team-page .team-context > span {
+    grid-column: 1;
+    font-size: 13px;
+  }
+
+  .team-page .team-section-head,
+  .team-page .department-section .team-section-head {
+    display: block;
+    margin: 52px 0 22px;
+  }
+
+  .team-page .team-section-head h2 {
+    margin: 13px 0;
+    font-size: clamp(2.5rem, 11vw, 3.7rem);
+  }
+
+  .team-page .team-section-head > p {
+    font-size: 13px;
+  }
+
+  .team-page .leadership-roster {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    align-items: start;
+  }
+
+  .team-page .leadership-roster article,
+  .team-page .leadership-roster article:nth-child(3n+2),
+  .team-page .leadership-roster article:nth-child(3n) {
+    padding: 7px 7px 12px;
+    transform: rotate(-.7deg);
+  }
+
+  .team-page .leadership-roster article:nth-child(even) {
+    transform: rotate(.8deg) translateY(9px);
+  }
+
+  .team-page .team-portrait {
+    aspect-ratio: 4/4.7;
+  }
+
+  .team-page .leadership-roster article > div:last-child > span {
+    margin-top: 11px;
+    font-size: 8px;
+  }
+
+  .team-page .leadership-roster h2 {
+    font-size: clamp(1rem, 4.3vw, 1.45rem);
+    overflow-wrap: anywhere;
+  }
+
+  .team-page .advisor-roster {
+    display: block;
+    margin: 65px 0;
+    padding: 18px;
+  }
+
+  .team-page .advisor-roster header h2 {
+    max-width: 420px;
+    margin: 9px 0 22px;
+    font-size: 2.6rem;
+  }
+
+  .team-page .advisor-roster article {
+    grid-template-columns: 108px 1fr;
+    gap: 16px;
+  }
+
+  .team-page .advisor-roster .team-portrait {
+    width: 108px;
+    aspect-ratio: 1;
+  }
+
+  .team-page .advisor-roster article > div:last-child > span {
+    font-size: 8px;
+  }
+
+  .team-page .advisor-roster h3 {
+    font-size: 1.35rem;
+    overflow-wrap: anywhere;
+  }
+
+  .team-page .department-section {
+    margin-top: 58px;
+  }
+
+  .team-page .department-section .team-section-head h2 {
+    font-size: 3.4rem;
+  }
+
+  .team-page .department-roster {
+    gap: 10px;
+  }
+
+  .team-page .department-roster article {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 9px;
+    min-height: 84px;
+    padding: 13px 9px;
+  }
+
+  .team-page .roster-portrait {
+    width: 44px;
+  }
+
+  .team-page .department-roster article > span:first-child {
+    top: 6px;
+    right: 7px;
+    font-size: 14px;
+  }
+
+  .team-page .department-roster h3 {
+    font-size: clamp(.85rem, 3.8vw, 1.05rem);
+    overflow-wrap: anywhere;
+  }
+
+  .team-page .department-roster article > div:last-of-type > p {
+    font-size: 13px;
+  }
+
+  .team-page .team-roster-doodle {
+    right: 7px;
+    bottom: 5px;
+    font-size: 11px;
+  }
+
+  .team-page .chapter-team-note {
+    display: block;
+    margin: 60px 0;
+    padding: 20px;
+  }
+
+  .team-page .chapter-team-note h2 {
+    margin: 13px 0 18px;
+    font-size: 2.4rem;
+  }
+
+  .team-page .chapter-team-note a {
+    margin: 0;
+    font-size: 11px;
+  }
+
+  .team-page .contributors-archive summary {
+    grid-template-columns: 1fr 40px;
+    gap: 10px;
+  }
+
+  .team-page .contributors-archive summary > span {
+    font-size: 9px;
+  }
+
+  .team-page .contributors-archive summary > b {
+    grid-column: 1 / -1;
+    font-size: 17px;
+  }
+
+  .team-page .contributors-archive > div > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-page *,
+  .team-page *::before,
+  .team-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

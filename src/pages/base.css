@@ -1,0 +1,14 @@
+.campaign, .campaign *, .campaign *::before, .campaign *::after { box-sizing: border-box; }
+html:has(main .campaign), body:has(main .campaign) { overflow-x: clip; }
+html:has(main .campaign) { scroll-padding-top: 86px; scrollbar-color: var(--color-muted) var(--color-paper); }
+body:has(main .campaign) { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.55; -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); }
+body:has(main .campaign) :focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
+.campaign { color: var(--color-ink-2); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.55; }
+.campaign h1, .campaign h2, .campaign h3 { margin: 0; color: var(--color-ink); font-family: var(--font-display); font-weight: var(--display-weight); font-synthesis: none; line-height: 1.08; overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+.campaign h1 { max-width: 18ch; }
+.campaign p { margin: 0; text-wrap: pretty; }
+.campaign img, .campaign video { display: block; max-width: 100%; }
+.campaign a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
+.campaign button, .campaign input, .campaign select, .campaign textarea { font: inherit; }
+.campaign .num, .campaign .figure, .campaign td.num { font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .campaign *, .campaign *::before, .campaign *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
