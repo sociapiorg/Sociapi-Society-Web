@@ -156,7 +156,7 @@ export function FAQPage() {
   return <><PageHero eyebrow="Questions" title="Clear answers, quickly." text="Membership, chapters, programs, certificates, partnerships, and the shop." />
     <section className="faq-page"><Container>
       <nav aria-label="FAQ categories">{groups.map(group => <a key={group} href={`#${group.replace(/\W+/g, "-").toLowerCase()}`}>{group}</a>)}</nav>
-      <div>{groups.map(group => <section key={group} id={group.replace(/\W+/g, "-").toLowerCase()}><p className="section-label">{group}</p>{faqs.filter(item => item.group === group).map(item => <details key={item.q}><summary>{item.q}<span>+</span></summary><p>{item.a}</p></details>)}</section>)}</div>
+      <div>{groups.map(group => <section key={group} id={group.replace(/\W+/g, "-").toLowerCase()}><p className="section-label">{group}</p><ul className="faq-questions">{faqs.filter(item => item.group === group).map(item => <li key={item.q}><article><h3>{item.q}</h3><details><summary>Read the answer<span aria-hidden="true">+</span></summary><p>{item.a}</p></details></article></li>)}</ul></section>)}</div>
     </Container></section>
   </>;
 }

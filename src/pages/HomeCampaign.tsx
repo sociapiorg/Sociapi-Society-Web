@@ -328,7 +328,7 @@ export default function HomeCampaign() {
           <div className="section-heading chapter-heading">
             <div>
               <p className="section-label">Our chapters</p>
-              <h2>One big community.<br /><span>Nine campus homes.</span></h2>
+              <h2>Where can you find<br /><span>a Sociapi chapter?</span></h2>
             </div>
             <p className="section-lead">Find Sociapi in six cities across Pakistan. Every chapter is a local student community connected to the same national network.</p>
           </div>
@@ -365,7 +365,7 @@ export default function HomeCampaign() {
       <section className="community-section guide-stop" id="community" data-mascot-stop="community">
         <div className="section-wrap">
           <div className="section-heading">
-            <div><p className="section-label">Find your way in</p><h2>There’s more than<br /><span>one way to belong.</span></h2></div>
+            <div><p className="section-label">Find your way in</p><h2>How can you<br /><span>get involved?</span></h2></div>
             <p className="section-lead">Curious, experienced, creative, or still figuring it out? There’s room to learn, help out, and make something with other students.</p>
           </div>
           <ul className="activity-grid">
@@ -387,7 +387,7 @@ export default function HomeCampaign() {
       <section className="events-section guide-stop" id="events" data-mascot-stop="events">
         <div className="section-wrap">
           <div className="section-heading events-heading">
-            <div><p className="section-label">Events and activities</p><h2>Ideas are better<br /><span>when shared.</span></h2></div>
+            <div><p className="section-label">Events and activities</p><h2>What happens at<br /><span>Sociapi events?</span></h2></div>
             <div className="events-heading-aside"><span className="hand-circle">Real<br />people</span><p>Big questions, practical sessions, and a room full of people ready to learn.</p><Link to="/events">All Sociapi events <b aria-hidden="true">↗</b></Link></div>
           </div>
           <div className="event-editorial-grid">
@@ -426,7 +426,7 @@ export default function HomeCampaign() {
       <section className="story-section guide-stop" id="story" data-mascot-stop="story">
         <div className="section-wrap">
           <div className="section-heading story-heading">
-            <div><p className="section-label">A little backstory</p><h2>One campus.<br /><span>Then another.</span></h2></div>
+            <div><p className="section-label">A little backstory</p><h2>How did Sociapi<br /><span>get started?</span></h2></div>
             <p className="section-lead">Sociapi started in December 2025 at Islamia College University Peshawar. Student ideas, events, and new campus communities carried it forward.</p>
           </div>
           <div className="story-layout">

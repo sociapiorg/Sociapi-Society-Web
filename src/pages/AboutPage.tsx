@@ -183,18 +183,18 @@ export default function AboutPage() {
     </Container></section>
 
     <section className="about-why" aria-labelledby="about-why-title" data-reveal data-about-guide="why"><Container>
-      <div className="about-why-heading"><p className="about-kicker">02 — WHY WE EXIST</p><h2 id="about-why-title">A practical place to <em>learn technology.</em></h2></div>
+      <div className="about-why-heading"><p className="about-kicker">02 — WHY WE EXIST</p><h2 id="about-why-title">Why was Sociapi created?</h2></div>
       <div className="about-why-copy"><p>Members practice in workshops, collaborate on projects, and share what they learn through Sociapi events and campus chapters.</p><figure><ResponsiveImage src="/Image/Event Image/Agentum Pic/IMG_5921.png" alt="Sociapi Society students together at an AGENTUM event" width={3024} height={4032} loading="lazy" decoding="async" sizes="(max-width: 760px) 100vw, 40vw" /><figcaption>Students learning and working together on campus.</figcaption></figure></div>
     </Container></section>
 
     <section className="about-way" aria-labelledby="about-way-title" data-reveal data-about-guide="way"><Container>
-      <header className="about-way-heading"><p className="about-kicker">03 — HOW MEMBERS TAKE PART</p><h2 id="about-way-title">Learn through <em>real activity.</em></h2><p>Start with a workshop, join a project, volunteer at an event, or lead activity on your campus.</p></header>
+      <header className="about-way-heading"><p className="about-kicker">03 — HOW MEMBERS TAKE PART</p><h2 id="about-way-title">How do members take part?</h2><p>Start with a workshop, join a project, volunteer at an event, or lead activity on your campus.</p></header>
       <ol className="about-way-grid">{principles.map(item => <li key={item.number}><span>{item.number}</span><div><h3>{item.title}</h3><p>{item.text}</p></div><b aria-hidden="true">↗</b></li>)}</ol>
     </Container></section>
 
     <section id="about-story" className="about-story" aria-labelledby="about-story-title" data-reveal data-about-guide="story"><Container>
       <div className="about-story-label"><p className="about-kicker">04 — OUR STORY</p><span>ISLAMIA COLLEGE UNIVERSITY PESHAWAR</span></div>
-      <div className="about-story-copy"><h2 id="about-story-title">Started at Islamia College University Peshawar.</h2><p className="about-story-date">DECEMBER 2025 <i aria-hidden="true" /> PESHAWAR, PAKISTAN</p><p>Sociapi began at Islamia College University Peshawar in December 2025. Students now take part through workshops, events, projects, volunteering, and campus chapters.</p><Link to="/team">Meet the people behind Sociapi <span aria-hidden="true">↗</span></Link></div>
+      <div className="about-story-copy"><h2 id="about-story-title">Where did Sociapi begin?</h2><p className="about-story-date">DECEMBER 2025 <i aria-hidden="true" /> PESHAWAR, PAKISTAN</p><p>Sociapi began at Islamia College University Peshawar in December 2025. Students now take part through workshops, events, projects, volunteering, and campus chapters.</p><Link to="/team">Meet the people behind Sociapi <span aria-hidden="true">↗</span></Link></div>
     </Container></section>
 
     {founder && <section className="about-founder" aria-labelledby="about-founder-title" data-reveal data-about-guide="founder"><Container>
@@ -206,18 +206,18 @@ export default function AboutPage() {
     </Container></section>}
 
     <section className="about-people" aria-labelledby="about-people-title" data-reveal data-about-guide="people"><Container>
-      <header className="about-people-heading"><p className="about-kicker">05 — LEADERSHIP</p><h2 id="about-people-title">The minds moving us forward.</h2><Link to="/team">Meet the full team <span aria-hidden="true">↗</span></Link></header>
+      <header className="about-people-heading"><p className="about-kicker">05 — LEADERSHIP</p><h2 id="about-people-title">Who leads Sociapi Society?</h2><Link to="/team">Meet the full team <span aria-hidden="true">↗</span></Link></header>
       <div className="about-people-grid">{leaders.map(person => <article key={person.name}><div className="about-person-photo"><ResponsiveImage src={person.image} alt={`Portrait of ${person.name}`} width={600} height={750} loading="lazy" decoding="async" sizes="(max-width: 760px) 80vw, 25vw" /></div><div className="about-person-copy"><p>{person.role === "Advisor" ? "ACADEMIC ADVISOR" : person.role.toUpperCase()}</p><h3>{person.name}</h3><span>{person.bio}</span></div></article>)}</div>
       <div className="about-after-founder"><Button to={links.join} external>Join Sociapi</Button></div>
     </Container></section>
 
     <section className="about-focus" aria-labelledby="about-focus-title" data-reveal data-about-guide="focus"><Container>
-      <div className="about-focus-heading"><p className="about-kicker">06 — WHAT MEMBERS EXPLORE</p><h2 id="about-focus-title">Technology to <em>learn and use.</em></h2><p>These are the fields members explore through workshops, projects, and community events.</p></div>
+      <div className="about-focus-heading"><p className="about-kicker">06 — WHAT MEMBERS EXPLORE</p><h2 id="about-focus-title">What can members learn?</h2><p>These are the fields members explore through workshops, projects, and community events.</p></div>
       <div className="about-focus-list"><h3 className="about-focus-list-title">WHAT WE EXPLORE</h3><ol aria-label="Technology areas">{focusAreas.map((field, index) => <li key={field} style={{ "--item-index": index } as CSSProperties} onPointerMove={trackExplorePointer} onPointerLeave={resetExplorePointer}><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><span className="about-focus-topic">{field}</span></li>)}</ol></div>
     </Container></section>
 
     <section className="about-events" aria-labelledby="about-events-title" data-reveal data-about-guide="events"><Container>
-      <header className="about-events-heading"><div><p className="about-kicker">IN THE ROOM TOGETHER</p><h2 id="about-events-title">Seminars and events students join.</h2></div><Link to="/events">Explore all events <span aria-hidden="true">↗</span></Link></header>
+      <header className="about-events-heading"><div><p className="about-kicker">IN THE ROOM TOGETHER</p><h2 id="about-events-title">Which events bring students together?</h2></div><Link to="/events">Explore all events <span aria-hidden="true">↗</span></Link></header>
       <div className="about-event-grid">{eventPhotos.map((photo, index) => <figure className={`about-event-card about-event-card-${index + 1}`} key={photo.title}><Link className="about-event-link" to={photo.href}><div className="about-event-image"><ResponsiveImage src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" sizes="(max-width: 760px) 100vw, 50vw" /></div><figcaption><span><strong>{photo.title}</strong><small>{photo.note}</small></span><b aria-hidden="true">↗</b></figcaption></Link></figure>)}</div>
     </Container></section>
 

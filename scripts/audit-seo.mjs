@@ -42,7 +42,30 @@ for (const route of routes) {
 if (titles.size !== routes.length) throw Error("Duplicate page titles detected");
 if (descriptions.size !== routes.length) throw Error("Duplicate meta descriptions detected");
 
+for (const event of events) {
+  const file = join("dist", "events", event.slug, "index.html");
+  const html = await readFile(file, "utf8");
+  const description = html.match(/<meta name="description" content="([^"]+)"/i)?.[1];
+  if (description !== event.metaDescription || description.length < 120 || description.length > 160) {
+    throw Error(`${event.name}: meta description must match its approved text and be 120-160 characters`);
+  }
+}
+
 const home = await readFile(join("dist", "index.html"), "utf8");
+const faq = await readFile(join("dist", "faqs", "index.html"), "utf8");
+const faqTitle = faq.match(/<title>([^<]+)<\/title>/i)?.[1];
+const faqDescription = faq.match(/<meta name="description" content="([^"]+)"/i)?.[1];
+if (faqTitle !== "Sociapi Society FAQs | Membership, Events & Chapters") {
+  throw Error("FAQ title does not match its approved text");
+}
+if (!faqDescription || faqDescription.length < 140 || faqDescription.length > 160) {
+  throw Error("FAQ description must be 140-160 characters");
+}
+const faqListItemCount = (faq.match(/<li><article><h3>/g) || []).length;
+if (faqListItemCount !== 9) {
+  throw Error("FAQ questions must render as headings in a structured list");
+}
+
 const homeDescriptions = [...home.matchAll(/<meta name="description" content="([^"]*)"/gi)];
 const homeTitles = [...home.matchAll(/<title>/gi)];
 const homeCanonicals = [...home.matchAll(/<link rel="canonical"/gi)];
@@ -91,7 +114,6 @@ if (urls.some((url) =>
 const agent = await readFile(join("dist", "events/agentum-2026/index.html"), "utf8");
 const mehfil = await readFile(join("dist", "events/mehfil-ai-2026/index.html"), "utf8");
 const chapter = await readFile(join("dist", "chapters/uet-mardan/index.html"), "utf8");
-const faq = await readFile(join("dist", "faqs/index.html"), "utf8");
 for (const [event, name] of [[agent, "Agentum"], [mehfil, "Mehfil AI"]]) {
   if ((event.match(/"@type":"Event"/g) || []).length !== 1 || !event.includes('"@type":"BreadcrumbList"')) {
     throw Error(`${name}: expected one Event and a BreadcrumbList schema`);
@@ -118,8 +140,12 @@ if (!home.includes('id="community"') || !home.includes("Find your way in")) {
 if (!home.includes('id="events"') || !home.includes("Events and activities")) {
   throw Error("Home must render its events section");
 }
-if (!home.includes("One big community.") || !home.includes("Nine campus homes.")) {
-  throw Error("Home must render its campus network section");
+for (const question of ["Where can you find", "a Sociapi chapter?", "How can you", "get involved?", "What happens at", "Sociapi events?", "How did Sociapi", "get started?"]) {
+  if (!home.includes(question)) throw Error(`Home is missing its question-style heading text: ${question}`);
+}
+const about = await readFile(join("dist", "about", "index.html"), "utf8");
+for (const question of ["Why was Sociapi created?", "How do members take part?", "Where did Sociapi begin?", "Who leads Sociapi Society?", "What can members learn?", "Which events bring students together?"]) {
+  if (!about.includes(question)) throw Error(`About page is missing its question-style heading: ${question}`);
 }
 if (!home.includes('aria-label="09"')) throw Error("Homepage counter value is not present in initial HTML");
 
